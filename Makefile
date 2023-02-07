@@ -5,7 +5,7 @@ GO111MODULE=on
 .EXPORT_ALL_VARIABLES:
 .PHONY: all dep lint vet build clean
 
-all: build universal-binary
+all: build
 
 dep: ## Get the dependencies
 	@go mod download
