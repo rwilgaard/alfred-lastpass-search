@@ -2507,7 +2507,7 @@ fi</string>
 	<key>variables</key>
 	<dict>
 		<key>PATH</key>
-		<string>/usr/local/bin:/opt/homebrew/bin</string>
+		<string>/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/opt/homebrew/bin/</string>
 		<key>PRIVATE_FOLDERS</key>
 		<string></string>
 		<key>USERNAME</key>
