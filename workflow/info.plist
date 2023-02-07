@@ -616,11 +616,11 @@
 	<key>createdby</key>
 	<string>Rasmus Wilgaard</string>
 	<key>description</key>
-	<string></string>
+	<string>Search in Lastpass Vault</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Lastpass Search GO</string>
+	<string>Lastpass Search</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -650,7 +650,7 @@
 				<key>escaping</key>
 				<integer>69</integer>
 				<key>script</key>
-				<string>LPASS_ASKPASS=./passwordprompt.js ${LPASS_BIN} login ${username} --trust</string>
+				<string>LPASS_ASKPASS=./passwordprompt.js lpass login ${username} --trust</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -664,26 +664,6 @@
 			<string>20C5774E-9136-4300-AA60-C6F4DDDB65B3</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>username</key>
-					<string>{var:USERNAME}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>8F538AB0-90D3-483F-9D33-BE03655C9046</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -703,6 +683,26 @@
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
 			<string>D11C8BF6-AA1C-43B0-964D-BA70A16C83CF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>username</key>
+					<string>{var:USERNAME}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>8F538AB0-90D3-483F-9D33-BE03655C9046</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -919,25 +919,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>externaltriggerid</key>
-				<string>lpsync</string>
-				<key>passinputasargument</key>
-				<false/>
-				<key>passvariables</key>
-				<false/>
-				<key>workflowbundleid</key>
-				<string>self</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>504DF36F-8336-4B52-953B-D9998D1529DB</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -1010,6 +991,25 @@
 			<integer>1</integer>
 		</dict>
 		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>lpsync</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<false/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>504DF36F-8336-4B52-953B-D9998D1529DB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.junction</string>
 			<key>uid</key>
@@ -1023,7 +1023,7 @@
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>{var:LPASS_BIN} edit --sync=now {var:item_id}; exit</string>
+				<string>lpass edit --sync=now {var:item_id}; exit</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.terminalcommand</string>
@@ -1031,6 +1031,37 @@
 			<string>6B62A320-E52A-4505-8A1C-6C42BDF7F840</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>35</integer>
+				<key>hotmod</key>
+				<integer>655360</integer>
+				<key>hotstring</key>
+				<string>P</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>6B303D76-B17A-4266-AFEA-E0FB7C4092F7</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1084,33 +1115,23 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
+				<key>lastpathcomponent</key>
 				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>35</integer>
-				<key>hotmod</key>
-				<integer>655360</integer>
-				<key>hotstring</key>
-				<string>P</string>
-				<key>leftcursor</key>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
 				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Lastpass Search</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
+			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>6B303D76-B17A-4266-AFEA-E0FB7C4092F7</string>
+			<string>830F3986-D17B-4CA4-8682-F0A5E286E7BD</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1134,27 +1155,6 @@
 			<string>172B3702-3EEC-4FE2-A49A-BACF5323514A</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Lastpass Search</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>830F3986-D17B-4CA4-8682-F0A5E286E7BD</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1219,6 +1219,25 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>externaltriggerid</key>
+				<string>details</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>E296F757-AF4A-48F3-B572-05B548A3E009</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -1251,25 +1270,6 @@ var response = app.displayAlert(alertText, {
 			<string>79E64DC4-9144-4504-B57B-73B95CEF5BD8</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>externaltriggerid</key>
-				<string>details</string>
-				<key>passinputasargument</key>
-				<false/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>self</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>E296F757-AF4A-48F3-B572-05B548A3E009</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1379,33 +1379,12 @@ var response = app.displayAlert(alertText, {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>lpsync</string>
-				<key>subtext</key>
-				<string></string>
-				<key>text</key>
-				<string>Sync Lastpass</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>B1FEC54A-CE55-42A7-A2A4-F356F1DAF46F</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>$LPASS_BIN ls --sync=now 1&gt; /dev/null &amp;&amp; echo "Sync completed" || echo "Sync error!"</string>
+				<string>lpass ls --sync=now 1&gt; /dev/null &amp;&amp; echo "Sync completed" || echo "Sync error!"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -1424,6 +1403,27 @@ var response = app.displayAlert(alertText, {
 			<string>DEBCDDB5-A283-4FD7-910C-A94340430B41</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>lpsync</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Sync Lastpass</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>B1FEC54A-CE55-42A7-A2A4-F356F1DAF46F</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1496,6 +1496,50 @@ var response = app.displayAlert(alertText, {
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Item copied to clipboard</string>
+				<key>title</key>
+				<string>Lastpass Search</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>5EFB09F2-7BB4-487B-9E3A-2A391975603B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>lpass logout -f</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>9DCA36BF-9A7B-4AF1-9646-1CFAEC2F0E1C</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
@@ -1522,7 +1566,11 @@ var response = app.displayAlert(alertText, {
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>$LPASS_BIN logout -f</string>
+				<string>FILE="${HOME}/.lpass/env"
+
+if [[ -f ${FILE} ]]; then
+	sed -i '' '/^[[:space:]]*$/d' ${FILE}
+fi</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -1533,7 +1581,7 @@ var response = app.displayAlert(alertText, {
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>9DCA36BF-9A7B-4AF1-9646-1CFAEC2F0E1C</string>
+			<string>A972EC54-3098-46EB-B06D-DBFE1C2621C6</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -1543,45 +1591,18 @@ var response = app.displayAlert(alertText, {
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
-				<true/>
+				<false/>
 				<key>removeextension</key>
 				<false/>
 				<key>text</key>
-				<string>Item copied to clipboard</string>
+				<string>Agent timeout succesfully configured</string>
 				<key>title</key>
 				<string>Lastpass Search</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>5EFB09F2-7BB4-487B-9E3A-2A391975603B</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>adduuid</key>
-				<false/>
-				<key>allowemptyfiles</key>
-				<true/>
-				<key>createintermediatefolders</key>
-				<true/>
-				<key>filename</key>
-				<string>~/.lpass/env</string>
-				<key>filetext</key>
-				<string>LPASS_AGENT_TIMEOUT={var:agent_timeout}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>relativepathmode</key>
-				<integer>0</integer>
-				<key>type</key>
-				<integer>2</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.writefile</string>
-			<key>uid</key>
-			<string>3706F45E-6D29-4706-9F8F-C991F6C4A78E</string>
+			<string>44E75156-3EB9-42F7-8856-4E9EC99F964E</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1616,6 +1637,25 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>externaltriggerid</key>
+				<string>agent_timeout</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>CA0EB159-25FC-43DE-996F-130419D519E6</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>subtext</key>
@@ -1640,67 +1680,27 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
+				<key>adduuid</key>
 				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>Agent timeout succesfully configured</string>
-				<key>title</key>
-				<string>Lastpass Search</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>44E75156-3EB9-42F7-8856-4E9EC99F964E</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>FILE="${HOME}/.lpass/env"
-
-if [[ -f ${FILE} ]]; then
-	sed -i '' '/^[[:space:]]*$/d' ${FILE}
-fi</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>A972EC54-3098-46EB-B06D-DBFE1C2621C6</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>externaltriggerid</key>
-				<string>agent_timeout</string>
-				<key>passinputasargument</key>
-				<false/>
-				<key>passvariables</key>
+				<key>allowemptyfiles</key>
 				<true/>
-				<key>workflowbundleid</key>
-				<string>self</string>
+				<key>createintermediatefolders</key>
+				<true/>
+				<key>filename</key>
+				<string>~/.lpass/env</string>
+				<key>filetext</key>
+				<string>LPASS_AGENT_TIMEOUT={var:agent_timeout}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>relativepathmode</key>
+				<integer>0</integer>
+				<key>type</key>
+				<integer>2</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
+			<string>alfred.workflow.output.writefile</string>
 			<key>uid</key>
-			<string>CA0EB159-25FC-43DE-996F-130419D519E6</string>
+			<string>3706F45E-6D29-4706-9F8F-C991F6C4A78E</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1746,46 +1746,6 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>Username set to: {var:USERNAME}</string>
-				<key>title</key>
-				<string>Lastpass Search</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>69F308ED-9627-45EC-B5F4-C097EE91C79B</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>subtext</key>
-				<string>Press ENTER to set your username to '{query}'</string>
-				<key>text</key>
-				<string>Enter your Lastpass username/email</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>6962FAC8-FD1B-4486-9B09-C4A9B9722AA0</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -1812,6 +1772,46 @@ fi</string>
 			<string>2EF12F6A-45E5-44E9-848F-1449BA15078B</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>subtext</key>
+				<string>Press ENTER to set your username to '{query}'</string>
+				<key>text</key>
+				<string>Enter your Lastpass username/email</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>6962FAC8-FD1B-4486-9B09-C4A9B9722AA0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Username set to: {var:USERNAME}</string>
+				<key>title</key>
+				<string>Lastpass Search</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>69F308ED-9627-45EC-B5F4-C097EE91C79B</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1929,25 +1929,6 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>subtext</key>
-				<string>Press ↩ to set PRIVATE_FOLDERS to '{query}'</string>
-				<key>text</key>
-				<string>Enter the names of your private folders. Comma separated.</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>415F2D3F-6AA2-4236-9E00-3640100F2B6E</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -1995,6 +1976,25 @@ fi</string>
 			<string>21755F39-E035-42BE-B82B-4CCC62A586CF</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>subtext</key>
+				<string>Press ↩ to set PRIVATE_FOLDERS to '{query}'</string>
+				<key>text</key>
+				<string>Enter the names of your private folders. Comma separated.</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>415F2D3F-6AA2-4236-9E00-3640100F2B6E</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2521,6 +2521,6 @@ fi</string>
 	<key>version</key>
 	<string>1.0.0</string>
 	<key>webaddress</key>
-	<string></string>
+	<string>https://github.com/rwilgaard/alfred-lastpass-search.git</string>
 </dict>
 </plist>
