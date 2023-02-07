@@ -1,15 +1,17 @@
 package main
 
 import (
-	"flag"
-	"fmt"
-	"os"
-	"os/exec"
-	"regexp"
-	"strings"
+    "flag"
+    "fmt"
+    "log"
+    "os"
+    "os/exec"
+    "regexp"
+    "strings"
 
-	aw "github.com/deanishe/awgo"
-	"golang.org/x/exp/slices"
+    aw "github.com/deanishe/awgo"
+    "github.com/deanishe/awgo/update"
+    "golang.org/x/exp/slices"
 )
 
 type workflowConfig struct {
@@ -26,19 +28,26 @@ type lastpassEntry struct {
     Password string
 }
 
+const (
+    repo        = "rwilgaard/alfred-lastpass-search"
+    updateJobName = "checkForUpdates"
+)
+
 var (
     wf          *aw.Workflow
     searchFlag  string
     detailsFlag string
     privateFlag bool
+    updateFlag  bool
     cfg         *workflowConfig
 )
 
 func init() {
-    wf = aw.New(aw.MaxResults(25), aw.SuppressUIDs(true))
+    wf = aw.New(aw.MaxResults(25), aw.SuppressUIDs(true), update.GitHub(repo))
     flag.StringVar(&searchFlag, "search", "", "search entries")
     flag.StringVar(&detailsFlag, "details", "", "item details")
     flag.BoolVar(&privateFlag, "private", false, "only search in private folders")
+    flag.BoolVar(&updateFlag, "update", false, "check for updates")
 }
 
 func reSearch(regex *regexp.Regexp, query string) string {
@@ -134,6 +143,32 @@ func getDetails(itemID string) map[string]string {
 func run() {
     wf.Args()
     flag.Parse()
+
+    if updateFlag {
+        wf.Configure(aw.TextErrors(true))
+        log.Println("Checking for updates...")
+        if err := wf.CheckForUpdate(); err != nil {
+            wf.FatalError(err)
+        }
+        return
+    }
+
+    if wf.UpdateCheckDue() && !wf.IsRunning(updateJobName) {
+        log.Println("Running update check in background...")
+        cmd := exec.Command(os.Args[0], "-update")
+        if err := wf.RunInBackground(updateJobName, cmd); err != nil {
+            log.Printf("Error starting update check: %s", err)
+        }
+    }
+
+    if wf.UpdateAvailable() {
+        wf.Configure(aw.SuppressUIDs(true))
+        wf.NewItem("Update Available!").
+            Subtitle("Press ↩ to install").
+            Autocomplete("workflow:update").
+            Valid(false).
+            Icon(aw.IconInfo)
+    }
 
     cfg = &workflowConfig{
         LpassBin: "lpass",
