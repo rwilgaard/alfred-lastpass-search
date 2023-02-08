@@ -52,7 +52,7 @@ jobs:
     needs: [lint]
     strategy:
       matrix:
-        os: [macos-11, macos-12, macos-13, ubuntu-20.04]
+        os: [macos-11, macos-12, ubuntu-20.04]
     steps:
       - name: Set up Go
         uses: actions/setup-go@v2
