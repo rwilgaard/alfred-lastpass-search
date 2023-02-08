@@ -1,0 +1,71 @@
+name: Build and Test
+
+on:
+  push:
+    branches: ['**']
+    paths:
+      - '**'
+      - '!.gitignore'
+      - '!LICENSE'
+      - '!*.md'
+
+jobs:
+  lint:
+    name: lint
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: ~1.19
+
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Install golangci-lint
+        run: curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.47.2
+
+      - name: Run vet.
+        run: make vet
+
+      - name: Run lint.
+        run: make lint
+
+  # test:
+  #   name: test
+  #   runs-on: ubuntu-20.04
+  #   steps:
+  #     - name: Set up Go
+  #       uses: actions/setup-go@v2
+  #       with:
+  #         go-version: ~1.19
+  #
+  #     - name: Check out code
+  #       uses: actions/checkout@v3
+  #
+  #     - name: Run test.
+  #       run: make test
+
+  build:
+    name: Build on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    needs: [lint, test]
+    strategy:
+      matrix:
+        os: [macos-11, macos-12, macos-13, ubuntu-20.04]
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: ~1.19
+
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Build
+        run: make build
+
+      - name: Create universal binary
+        if: ${{ matrix.os != 'ubuntu-20.04' }}
+        run: |
+          make universal-binary
