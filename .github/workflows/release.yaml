@@ -62,9 +62,8 @@ jobs:
           test -f download/alfred-lastpass-search && cp download/alfred-lastpass-search workflow/alfred-lastpass-search
           chmod +x workflow/alfred-lastpass-search
           rm -rf download
-
-      - run: |
-          make clean
+          rm -rf workflow/alfred-lastpass-search-amd64
+          rm -rf workflow/alfred-lastpass-search-arm64
 
       - name: Package Alfred workflow
         run: |
