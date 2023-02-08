@@ -31,6 +31,5 @@ help: ## Display this help screen
 
 package-alfred: build
 	@cd ./workflow \
-	&& /usr/libexec/PlistBuddy -c 'print variablesdontexport' info.plist | grep '    ' | sed -E 's/ {4}//' | xargs -I {} /usr/libexec/PlistBuddy -c "set variables:'{}' ''" info.plist \
 	&& zip -r ../$(PROJECT_NAME).alfredworkflow ./* \
 	&& cd .. && rm -rf workflow && git checkout workflow

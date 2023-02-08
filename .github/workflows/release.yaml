@@ -22,7 +22,7 @@ jobs:
         run: git fetch --prune --unshallow
 
       - name: "Validates GO releaser config"
-        uses: goreleaser/goreleaser-action@v2
+        uses: goreleaser/goreleaser-action@v4
         with:
           args: check
 
@@ -68,9 +68,9 @@ jobs:
           make package-alfred
 
       - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v2
+        uses: goreleaser/goreleaser-action@v4
         with:
           version: latest
-          args: release --rm-dist
+          args: release --clean
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
