@@ -1165,7 +1165,7 @@
 				<key>escaping</key>
 				<integer>69</integer>
 				<key>script</key>
-				<string>${LPASS_BIN} show ${item_id} --${copy_field} --sync=no -c &amp;&amp; echo "${copy_field} copied to clipboard" || echo "Error copying ${copy_field} clipboard!"</string>
+				<string>lpass show ${item_id} --${copy_field} --sync=no -c &amp;&amp; echo "${copy_field} copied to clipboard" || echo "Error copying ${copy_field} clipboard!"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -2571,7 +2571,7 @@ fi</string>
 		<string>USERNAME</string>
 	</array>
 	<key>version</key>
-	<string>1.0.1</string>
+	<string>1.0.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/rwilgaard/alfred-lastpass-search.git</string>
 </dict>
