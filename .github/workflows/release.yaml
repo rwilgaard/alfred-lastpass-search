@@ -1,0 +1,76 @@
+name: Release
+on:
+  push:
+    tags:
+      - '**'
+    branches-ignore:
+      - '**'
+
+jobs:
+  build-release:
+    runs-on: macos-12
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: ~1.19
+
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Unshallow
+        run: git fetch --prune --unshallow
+
+      - name: "Validates GO releaser config"
+        uses: goreleaser/goreleaser-action@v4
+        with:
+          args: check
+
+      - name: Build Alfred workflow
+        run: |
+          make build
+
+      - name: Create universal binary
+        run: |
+          make universal-binary
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: universal-binary
+          path: workflow/alfred-lastpass-search
+
+  release:
+    needs: build-release
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: ~1.19
+
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Dowload artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: universal-binary
+          path: download
+
+      - run: |
+          test -f download/alfred-lastpass-search && cp download/alfred-lastpass-search workflow/alfred-lastpass-search
+          chmod +x workflow/alfred-lastpass-search
+          rm -rf download
+
+      - name: Package Alfred workflow
+        run: |
+          make package-alfred
+
+      - name: Run GoReleaser
+        uses: goreleaser/goreleaser-action@v4
+        with:
+          version: latest
+          args: release --clean
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
