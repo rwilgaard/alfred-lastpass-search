@@ -63,6 +63,9 @@ jobs:
           chmod +x workflow/alfred-lastpass-search
           rm -rf download
 
+      - run: |
+          make clean
+
       - name: Package Alfred workflow
         run: |
           make package-alfred
