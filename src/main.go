@@ -43,7 +43,7 @@ var (
 )
 
 func init() {
-    wf = aw.New(aw.MaxResults(25), aw.SuppressUIDs(true), update.GitHub(repo))
+    wf = aw.New(aw.MaxResults(25), update.GitHub(repo))
     flag.StringVar(&searchFlag, "search", "", "search entries")
     flag.StringVar(&detailsFlag, "details", "", "item details")
     flag.BoolVar(&privateFlag, "private", false, "only search in private folders")
@@ -187,6 +187,7 @@ func run() {
     }
 
     if detailsFlag != "" {
+        wf.Configure(aw.SuppressUIDs(true))
         backIcon := aw.Icon{Value: fmt.Sprintf("%s/icons/go_back.png", wf.Dir())}
         details := getDetails(detailsFlag)
         excluded := []string{
@@ -243,7 +244,18 @@ func run() {
 
     var entries []lastpassEntry
     if privateFlag {
-        entries = getEntries(searchFlag, os.Getenv("PRIVATE_FOLDERS"))
+        if strings.TrimSpace(cfg.PrivateFolders) == "" {
+            wf.NewItem("Private folders not configured...").
+                Subtitle("Press ⏎ to configure").
+                Arg("lpconf").
+                Icon(aw.IconInfo).
+                Valid(true)
+            wf.SendFeedback()
+            return
+        }
+        for _, folder := range strings.Split(cfg.PrivateFolders, ",") {
+            entries = append(entries, getEntries(searchFlag, strings.TrimSpace(folder))...)
+        }
     } else {
         entries = getEntries(searchFlag, "")
     }
