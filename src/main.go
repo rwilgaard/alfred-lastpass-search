@@ -43,7 +43,7 @@ var (
 )
 
 func init() {
-    wf = aw.New(aw.MaxResults(25), update.GitHub(repo))
+    wf = aw.New(aw.MaxResults(25), update.GitHub(repo), aw.SuppressUIDs(true))
     flag.StringVar(&searchFlag, "search", "", "search entries")
     flag.StringVar(&detailsFlag, "details", "", "item details")
     flag.BoolVar(&privateFlag, "private", false, "only search in private folders")
@@ -190,7 +190,6 @@ func run() {
     }
 
     if detailsFlag != "" {
-        wf.Configure(aw.SuppressUIDs(true))
         backIcon := aw.Icon{Value: fmt.Sprintf("%s/icons/go_back.png", wf.Dir())}
         details := getDetails(detailsFlag)
         excluded := []string{
@@ -237,9 +236,9 @@ func run() {
             Arg("edit").
             Valid(true)
 
-        wf.NewItem("Delete entry").
-            Arg("delete").
-            Valid(true)
+        // wf.NewItem("Delete entry").
+        //     Arg("delete").
+        //     Valid(true)
 
         wf.SendFeedback()
         return
