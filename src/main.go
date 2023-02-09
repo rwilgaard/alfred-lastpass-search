@@ -118,7 +118,7 @@ func getEntries(query string, folder string) []lastpassEntry {
     return entries
 }
 
-func getDetails(itemID string) map[string]string {
+func getDetails(itemID string) ([]string, map[string]string) {
     cmd := exec.Command(cfg.LpassBin, "show", itemID, "--sync=no")
     out, err := cmd.Output()
 
@@ -128,6 +128,7 @@ func getDetails(itemID string) map[string]string {
 
     keyRegex := regexp.MustCompile(`^(\S.+?):`)
     valRegex := regexp.MustCompile(`^\S.+?: (.*)`)
+    keys := []string{}
     details := make(map[string]string)
     for i, l := range strings.Split(string(out), "\n") {
         if i == 0 {
@@ -135,17 +136,20 @@ func getDetails(itemID string) map[string]string {
         }
         key := reSearch(keyRegex, l)
         val := reSearch(valRegex, l)
+        keys = append(keys, key)
         details[key] = val
         if key == "Notes" {
             break
         }
     }
-    return details
+    return keys, details
 }
 
 func run() {
     wf.Args()
     flag.Parse()
+
+    wf.Configure(aw.SuppressUIDs(true))
 
     if updateFlag {
         wf.Configure(aw.TextErrors(true))
@@ -165,9 +169,8 @@ func run() {
     }
 
     if wf.UpdateAvailable() {
-        wf.Configure(aw.SuppressUIDs(true))
         wf.NewItem("Update Available!").
-            Subtitle("Press ↩ to install").
+            Subtitle("Press ⏎ to install").
             Autocomplete("workflow:update").
             Valid(false).
             Icon(aw.IconInfo)
@@ -182,7 +185,7 @@ func run() {
 
     if !isLoggedIn() {
         wf.NewItem("You're not logged in to Lastpass.").
-            Subtitle("Press ENTER to login.").
+            Subtitle("Press ⏎ to login.").
             Arg("auth").
             Valid(true)
         wf.SendFeedback()
@@ -191,7 +194,7 @@ func run() {
 
     if detailsFlag != "" {
         backIcon := aw.Icon{Value: fmt.Sprintf("%s/icons/go_back.png", wf.Dir())}
-        details := getDetails(detailsFlag)
+        keys, details := getDetails(detailsFlag)
         excluded := []string{
             "id", "name", "fullname", "last_modified_gmt",
             "last_touch", "extra_fields", "folder", "notetype",
@@ -207,7 +210,8 @@ func run() {
             Arg("go_back").
             Valid(true)
 
-        for key, value := range details {
+        for _, key := range keys {
+            value := details[key]
             if slices.Contains(excluded, strings.ToLower(key)) {
                 continue
             }
