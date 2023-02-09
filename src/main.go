@@ -126,8 +126,8 @@ func getDetails(itemID string) map[string]string {
         panic(err)
     }
 
-    keyRegex := regexp.MustCompile(`^(.+?):`)
-    valRegex := regexp.MustCompile(`^.+?: (.*)`)
+    keyRegex := regexp.MustCompile(`^(\S.+?):`)
+    valRegex := regexp.MustCompile(`^\S.+?: (.*)`)
     details := make(map[string]string)
     for i, l := range strings.Split(string(out), "\n") {
         if i == 0 {
@@ -136,6 +136,9 @@ func getDetails(itemID string) map[string]string {
         key := reSearch(keyRegex, l)
         val := reSearch(valRegex, l)
         details[key] = val
+        if key == "Notes" {
+            break
+        }
     }
     return details
 }
