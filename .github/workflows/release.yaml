@@ -51,6 +51,8 @@ jobs:
 
       - name: Check out code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Dowload artifacts
         uses: actions/download-artifact@v2
