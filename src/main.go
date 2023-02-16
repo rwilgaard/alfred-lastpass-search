@@ -16,7 +16,6 @@ import (
 
 type workflowConfig struct {
     LpassBin       string
-    PrivateFolders string `env:"PRIVATE_FOLDERS"`
 }
 
 type lastpassEntry struct {
@@ -37,7 +36,7 @@ var (
     wf          *aw.Workflow
     searchFlag  string
     detailsFlag string
-    privateFlag bool
+    foldersFlag string
     updateFlag  bool
     cfg         *workflowConfig
 )
@@ -46,7 +45,7 @@ func init() {
     wf = aw.New(aw.MaxResults(25), update.GitHub(repo), aw.SuppressUIDs(true))
     flag.StringVar(&searchFlag, "search", "", "search entries")
     flag.StringVar(&detailsFlag, "details", "", "item details")
-    flag.BoolVar(&privateFlag, "private", false, "only search in private folders")
+    flag.StringVar(&foldersFlag, "folders","", "only search in specified folders")
     flag.BoolVar(&updateFlag, "update", false, "check for updates")
 }
 
@@ -249,21 +248,8 @@ func run() {
     }
 
     var entries []lastpassEntry
-    if privateFlag {
-        if strings.TrimSpace(cfg.PrivateFolders) == "" {
-            wf.NewItem("Private folders not configured...").
-                Subtitle("Press ⏎ to configure").
-                Arg("lpconf").
-                Icon(aw.IconInfo).
-                Valid(true)
-            wf.SendFeedback()
-            return
-        }
-        for _, folder := range strings.Split(cfg.PrivateFolders, ",") {
-            entries = append(entries, getEntries(searchFlag, strings.TrimSpace(folder))...)
-        }
-    } else {
-        entries = getEntries(searchFlag, "")
+    for _, folder := range strings.Split(foldersFlag, ",") {
+        entries = append(entries, getEntries(searchFlag, strings.TrimSpace(folder))...)
     }
     for _, e := range entries {
         icon := aw.Icon{Value: fmt.Sprintf("%s/icons/password.png", wf.Dir())}
