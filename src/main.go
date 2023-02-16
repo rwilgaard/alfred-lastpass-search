@@ -266,8 +266,13 @@ func run() {
         entries = getEntries(searchFlag, "")
     }
     for _, e := range entries {
+        icon := aw.Icon{Value: fmt.Sprintf("%s/icons/password.png", wf.Dir())}
+        if e.URL == "http://sn" {
+            icon = aw.Icon{Value: fmt.Sprintf("%s/icons/sn.png", wf.Dir())}
+        }
         it := wf.NewItem(e.Name).
             Subtitle(fmt.Sprintf("Folder: %s  |  ID: %s", e.Folder, e.ID)).
+            Icon(&icon).
             Arg("details").
             Var("item_id", e.ID).
             Var("item_name", e.Name).
