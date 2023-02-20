@@ -8,6 +8,19 @@
 	<string>Tools</string>
 	<key>connections</key>
 	<dict>
+		<key>062E6DF8-28E8-4268-9684-DBBF96B22EAD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2BC67259-5B0E-4067-8111-E104CAEEE727</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>0EB5162D-8D05-4954-BAD8-97E8E642129C</key>
 		<array>
 			<dict>
@@ -110,6 +123,21 @@
 				<false/>
 			</dict>
 		</array>
+		<key>2BC67259-5B0E-4067-8111-E104CAEEE727</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>69762CC0-0EEB-4339-BD19-4E3D2D380C65</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>6753D302-435E-4371-8563-881C80D9E460</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>30370047-D1BD-4EA2-840D-B385D10659B5</key>
 		<array>
 			<dict>
@@ -191,6 +219,18 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A782A61A-A32D-4D42-8EC5-DF2B5F8DE2BE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>7A7D9127-41F4-4395-BA81-4D95BFB4C1B8</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -338,6 +378,33 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>A782A61A-A32D-4D42-8EC5-DF2B5F8DE2BE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E296F757-AF4A-48F3-B572-05B548A3E009</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>_button2</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>062E6DF8-28E8-4268-9684-DBBF96B22EAD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>_button1</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -616,11 +683,11 @@
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>35</integer>
+				<integer>37</integer>
 				<key>hotmod</key>
 				<integer>1179648</integer>
 				<key>hotstring</key>
-				<string>P</string>
+				<string>L</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -761,7 +828,7 @@
 				<key>hotkey</key>
 				<integer>35</integer>
 				<key>hotmod</key>
-				<integer>655360</integer>
+				<integer>1179648</integer>
 				<key>hotstring</key>
 				<string>P</string>
 				<key>leftcursor</key>
@@ -964,6 +1031,20 @@
 						<string>go_back</string>
 						<key>uid</key>
 						<string>067B148E-A218-463A-97A8-39D027D5FC35</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>delete</string>
+						<key>outputlabel</key>
+						<string>delete</string>
+						<key>uid</key>
+						<string>7A7D9127-41F4-4395-BA81-4D95BFB4C1B8</string>
 					</dict>
 				</array>
 				<key>elselabel</key>
@@ -1258,38 +1339,6 @@ var response = app.displayAlert(alertText, {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string>{var:edit}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>1</integer>
-						<key>matchstring</key>
-						<string></string>
-						<key>outputlabel</key>
-						<string>edit</string>
-						<key>uid</key>
-						<string>2EE6E9DC-BDAA-40CE-B804-D5B69B6AB904</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>else</string>
-				<key>hideelse</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>335CBD01-5EFD-4ADD-B892-36AA36B22B4F</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -1349,6 +1398,38 @@ var response = app.displayAlert(alertText, {
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>8DFF1A5A-133F-46E8-BF67-F2E8708D6B0D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:edit}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>1</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>edit</string>
+						<key>uid</key>
+						<string>2EE6E9DC-BDAA-40CE-B804-D5B69B6AB904</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>335CBD01-5EFD-4ADD-B892-36AA36B22B4F</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1560,11 +1641,117 @@ var response = app.displayAlert(alertText, {
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>button1</key>
+				<string>Delete</string>
+				<key>button2</key>
+				<string>Cancel</string>
+				<key>button3</key>
+				<string></string>
+				<key>description</key>
+				<string>{var:msg}</string>
+				<key>title</key>
+				<string>Delete {var:item_name}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.dialog</string>
+			<key>uid</key>
+			<string>A782A61A-A32D-4D42-8EC5-DF2B5F8DE2BE</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>69</integer>
+				<key>script</key>
+				<string>lpass rm --sync=now "${item_id}" &amp;&amp; echo "${item_name} deleted!" || echo "Error deleting ${item_name}"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>062E6DF8-28E8-4268-9684-DBBF96B22EAD</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Lastpass Search</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>69762CC0-0EEB-4339-BD19-4E3D2D380C65</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:enable_notifications}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>5</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>enabled</string>
+						<key>uid</key>
+						<string>6753D302-435E-4371-8563-881C80D9E460</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>2BC67259-5B0E-4067-8111-E104CAEEE727</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>062E6DF8-28E8-4268-9684-DBBF96B22EAD</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
+			<key>xpos</key>
+			<real>1570</real>
+			<key>ypos</key>
+			<real>955</real>
+		</dict>
 		<key>0EB5162D-8D05-4954-BAD8-97E8E642129C</key>
 		<dict>
 			<key>colorindex</key>
@@ -1628,6 +1815,15 @@ var response = app.displayAlert(alertText, {
 			<key>ypos</key>
 			<real>430</real>
 		</dict>
+		<key>2BC67259-5B0E-4067-8111-E104CAEEE727</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
+			<key>xpos</key>
+			<real>1715</real>
+			<key>ypos</key>
+			<real>985</real>
+		</dict>
 		<key>30370047-D1BD-4EA2-840D-B385D10659B5</key>
 		<dict>
 			<key>colorindex</key>
@@ -1644,7 +1840,7 @@ var response = app.displayAlert(alertText, {
 			<key>xpos</key>
 			<real>1280</real>
 			<key>ypos</key>
-			<real>660</real>
+			<real>670</real>
 		</dict>
 		<key>33E8DC82-8172-4C0F-B741-1BE2A45A68AF</key>
 		<dict>
@@ -1660,7 +1856,7 @@ var response = app.displayAlert(alertText, {
 			<key>xpos</key>
 			<real>1255</real>
 			<key>ypos</key>
-			<real>505</real>
+			<real>490</real>
 		</dict>
 		<key>504DF36F-8336-4B52-953B-D9998D1529DB</key>
 		<dict>
@@ -1697,6 +1893,15 @@ var response = app.displayAlert(alertText, {
 			<real>575</real>
 			<key>ypos</key>
 			<real>695</real>
+		</dict>
+		<key>69762CC0-0EEB-4339-BD19-4E3D2D380C65</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
+			<key>xpos</key>
+			<real>1780</real>
+			<key>ypos</key>
+			<real>955</real>
 		</dict>
 		<key>6B303D76-B17A-4266-AFEA-E0FB7C4092F7</key>
 		<dict>
@@ -1782,7 +1987,7 @@ var response = app.displayAlert(alertText, {
 			<key>xpos</key>
 			<real>1570</real>
 			<key>ypos</key>
-			<real>840</real>
+			<real>845</real>
 		</dict>
 		<key>9A34D7BF-153A-4190-ADBA-073F7CEB76A2</key>
 		<dict>
@@ -1801,6 +2006,15 @@ var response = app.displayAlert(alertText, {
 			<real>415</real>
 			<key>ypos</key>
 			<real>800</real>
+		</dict>
+		<key>A782A61A-A32D-4D42-8EC5-DF2B5F8DE2BE</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
+			<key>xpos</key>
+			<real>1395</real>
+			<key>ypos</key>
+			<real>845</real>
 		</dict>
 		<key>AB717369-4357-4E01-B31F-4218CF0A5A31</key>
 		<dict>
@@ -1972,7 +2186,7 @@ var response = app.displayAlert(alertText, {
 		<string>/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/opt/homebrew/bin/</string>
 	</dict>
 	<key>version</key>
-	<string>1.1.0</string>
+	<string>1.2.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/rwilgaard/alfred-lastpass-search.git</string>
 </dict>
