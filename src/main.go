@@ -289,9 +289,15 @@ func run() {
             Arg("edit").
             Valid(true)
 
-        // wf.NewItem("Delete entry").
-        //     Arg("delete").
-        //     Valid(true)
+        fullname := fmt.Sprintf("%s/%s", os.Getenv("item_folder"), os.Getenv("item_name"))
+        deleteMsg := fmt.Sprintf(`Are you sure you want to delete this entry?
+Name: %s
+ID: %s`, fullname, os.Getenv("item_id"))
+
+        wf.NewItem("Delete entry").
+            Arg("delete").
+            Var("msg", deleteMsg).
+            Valid(true)
 
         wf.SendFeedback()
         return
@@ -313,6 +319,7 @@ func run() {
             Var("item_id", e.ID).
             Var("item_name", e.Name).
             Var("item_url", e.URL).
+            Var("item_folder", e.Folder).
             Var("query", searchFlag).
             Copytext("").
             Valid(true)
