@@ -2183,7 +2183,7 @@ var response = app.displayAlert(alertText, {
 	<key>variables</key>
 	<dict>
 		<key>PATH</key>
-		<string>/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/opt/homebrew/bin/</string>
+		<string>/bin:/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/opt/homebrew/bin/</string>
 	</dict>
 	<key>version</key>
 	<string>1.2.0</string>
