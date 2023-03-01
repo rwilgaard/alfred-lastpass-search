@@ -15,7 +15,11 @@ import (
 )
 
 type WorkflowConfig struct {
-    LpassBin string
+    LpassBin       string
+    ModifierReturn string `env:"modifier_return"`
+    ModifierCmd    string `env:"modifier_cmd"`
+    ModifierOpt    string `env:"modifier_opt"`
+    ModifierCtrl   string `env:"modifier_ctrl"`
 }
 
 type LastpassFolder struct {
@@ -313,37 +317,30 @@ ID: %s`, fullname, os.Getenv("item_id"))
             icon = aw.Icon{Value: fmt.Sprintf("%s/icons/sn.png", wf.Dir())}
         }
         it := wf.NewItem(e.Name).
-            Subtitle(fmt.Sprintf("Folder: %s  |  ID: %s", e.Folder, e.ID)).
+            Subtitle(fmt.Sprintf("%s  •  ID: %s", e.Folder, e.ID)).
             Icon(&icon).
-            Arg("details").
             Var("item_id", e.ID).
             Var("item_name", e.Name).
             Var("item_url", e.URL).
             Var("item_folder", e.Folder).
             Var("query", searchFlag).
-            Copytext("").
+            Var("action", cfg.ModifierReturn).
             Valid(true)
 
         it.NewModifier(aw.ModCtrl).
-            Subtitle("Copy ID").
-            Arg("copy").
-            Var("copy_field", "id").
+            Subtitle(cfg.ModifierCtrl).
+            Var("action", cfg.ModifierCtrl).
             Valid(true)
 
-        if e.Username != "" {
-            it.NewModifier(aw.ModAlt).
-                Subtitle("Copy username").
-                Arg("copy").
-                Var("copy_field", "username").
-                Valid(true)
-        }
-        if e.Password != "" {
-            it.NewModifier(aw.ModCmd).
-                Subtitle("Copy password").
-                Arg("copy").
-                Var("copy_field", "password").
-                Valid(true)
-        }
+        it.NewModifier(aw.ModOpt).
+            Subtitle(cfg.ModifierOpt).
+            Var("action", cfg.ModifierOpt).
+            Valid(true)
+
+        it.NewModifier(aw.ModCmd).
+            Subtitle(cfg.ModifierCmd).
+            Var("action", cfg.ModifierCmd).
+            Valid(true)
     }
 
     if wf.IsEmpty() {
