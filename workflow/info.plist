@@ -174,6 +174,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>4DAC7A29-A580-450C-95CD-269C4C683147</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E94C6938-8C85-4DBE-A61A-480ACA3DA136</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>4E906ED5-B3D5-4F8E-AF8E-738D4D693997</key>
 		<array>
 			<dict>
@@ -333,25 +346,49 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
+				<string>FA003EB0-09C4-47E7-9C74-912C82153798</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>A739E63C-ABFB-4E01-96BB-62BAD5B206F2</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>4DAC7A29-A580-450C-95CD-269C4C683147</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>5BD5C405-5183-4BFC-9B69-A418C512809E</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>B4AD0C00-95F9-4053-84A4-A98C00313EAE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>DD27E14D-0E72-4873-96B5-CB7606374DA7</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>C55D80BA-A82C-4C56-989F-A1ED6C8B3F29</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>sourceoutputuid</key>
-				<string>BA485200-F33A-4F7B-8F3E-DE8F7CEBD843</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>172B3702-3EEC-4FE2-A49A-BACF5323514A</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>sourceoutputuid</key>
-				<string>BE6C06BF-5FD6-4147-9215-6C16AE2F5031</string>
+				<string>82D0EC4B-156B-4AA8-B131-30BF46DC6604</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -467,6 +504,19 @@
 		</array>
 		<key>B479C708-48E4-411D-8A23-7DA4F52B1AB4</key>
 		<array/>
+		<key>B4AD0C00-95F9-4053-84A4-A98C00313EAE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E94C6938-8C85-4DBE-A61A-480ACA3DA136</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>DEBCDDB5-A283-4FD7-910C-A94340430B41</key>
 		<array>
 			<dict>
@@ -506,6 +556,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>FA003EB0-09C4-47E7-9C74-912C82153798</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E94C6938-8C85-4DBE-A61A-480ACA3DA136</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Rasmus Wilgaard</string>
@@ -517,6 +580,87 @@
 	<string>Lastpass Search</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Lastpass Search</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>830F3986-D17B-4CA4-8682-F0A5E286E7BD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>69</integer>
+				<key>script</key>
+				<string>lpass show --sync=no --clip --${copy_field} "${item_id}" &amp;&amp; echo "${copy_field} copied to clipboard" || echo "Error copying ${copy_field} clipboard!"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>inboundconfig</key>
+			<dict>
+				<key>externalid</key>
+				<string>copy</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>172B3702-3EEC-4FE2-A49A-BACF5323514A</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:enable_notifications}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>5</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>enabled</string>
+						<key>uid</key>
+						<string>6753D302-435E-4371-8563-881C80D9E460</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>2293605A-8FEA-43C8-AF79-AB5567408A8F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -683,11 +827,11 @@
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>37</integer>
+				<integer>35</integer>
 				<key>hotmod</key>
 				<integer>1179648</integer>
 				<key>hotstring</key>
-				<string>L</string>
+				<string>P</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -701,6 +845,114 @@
 			<string>F516F95A-574D-4A79-9DB8-535B0D46F56F</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>auth</string>
+						<key>outputlabel</key>
+						<string>auth</string>
+						<key>uid</key>
+						<string>C2D3AD02-33BC-45DD-9A1F-853A7B703457</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:action}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>Copy Username</string>
+						<key>outputlabel</key>
+						<string>Copy Username</string>
+						<key>uid</key>
+						<string>A739E63C-ABFB-4E01-96BB-62BAD5B206F2</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:action}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>Copy Password</string>
+						<key>outputlabel</key>
+						<string>Copy Password</string>
+						<key>uid</key>
+						<string>5BD5C405-5183-4BFC-9B69-A418C512809E</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:action}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>Copy ID</string>
+						<key>outputlabel</key>
+						<string>Copy ID</string>
+						<key>uid</key>
+						<string>DD27E14D-0E72-4873-96B5-CB7606374DA7</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:action}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>Show Details</string>
+						<key>outputlabel</key>
+						<string>Show Details</string>
+						<key>uid</key>
+						<string>82D0EC4B-156B-4AA8-B131-30BF46DC6604</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>8EE3D608-1415-4C4B-9228-1F58F40597FC</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>copy_field</key>
+					<string>username</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>FA003EB0-09C4-47E7-9C74-912C82153798</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -725,7 +977,7 @@
 			<key>config</key>
 			<dict>
 				<key>externaltriggerid</key>
-				<string>details</string>
+				<string>copy</string>
 				<key>passinputasargument</key>
 				<false/>
 				<key>passvariables</key>
@@ -736,81 +988,47 @@
 			<key>type</key>
 			<string>alfred.workflow.output.callexternaltrigger</string>
 			<key>uid</key>
-			<string>C55D80BA-A82C-4C56-989F-A1ED6C8B3F29</string>
+			<string>E94C6938-8C85-4DBE-A61A-480ACA3DA136</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string></string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
-						<string>auth</string>
-						<key>outputlabel</key>
-						<string>auth</string>
-						<key>uid</key>
-						<string>C2D3AD02-33BC-45DD-9A1F-853A7B703457</string>
-					</dict>
-					<dict>
-						<key>inputstring</key>
-						<string></string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
-						<string>details</string>
-						<key>outputlabel</key>
-						<string>details</string>
-						<key>uid</key>
-						<string>BA485200-F33A-4F7B-8F3E-DE8F7CEBD843</string>
-					</dict>
-					<dict>
-						<key>inputstring</key>
-						<string></string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
-						<string>copy</string>
-						<key>outputlabel</key>
-						<string>copy</string>
-						<key>uid</key>
-						<string>BE6C06BF-5FD6-4147-9215-6C16AE2F5031</string>
-					</dict>
-					<dict>
-						<key>inputstring</key>
-						<string></string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
-						<string>open_url</string>
-						<key>outputlabel</key>
-						<string>open_url</string>
-						<key>uid</key>
-						<string>30DD7A8E-F001-4D5E-A1A9-E238B4E5E120</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>else</string>
-				<key>hideelse</key>
-				<true/>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>copy_field</key>
+					<string>password</string>
+				</dict>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
+			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>8EE3D608-1415-4C4B-9228-1F58F40597FC</string>
+			<string>4DAC7A29-A580-450C-95CD-269C4C683147</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>copy_field</key>
+					<string>id</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>B4AD0C00-95F9-4053-84A4-A98C00313EAE</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -828,7 +1046,7 @@
 				<key>hotkey</key>
 				<integer>35</integer>
 				<key>hotmod</key>
-				<integer>1179648</integer>
+				<integer>655360</integer>
 				<key>hotstring</key>
 				<string>P</string>
 				<key>leftcursor</key>
@@ -897,50 +1115,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Lastpass Search</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>830F3986-D17B-4CA4-8682-F0A5E286E7BD</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>69</integer>
-				<key>script</key>
-				<string>lpass show ${item_id} --${copy_field} --sync=no -c &amp;&amp; echo "${copy_field} copied to clipboard" || echo "Error copying ${copy_field} clipboard!"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>172B3702-3EEC-4FE2-A49A-BACF5323514A</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
@@ -956,32 +1130,19 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string>{var:enable_notifications}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>5</integer>
-						<key>matchstring</key>
-						<string></string>
-						<key>outputlabel</key>
-						<string>enabled</string>
-						<key>uid</key>
-						<string>6753D302-435E-4371-8563-881C80D9E460</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>else</string>
-				<key>hideelse</key>
+				<key>externaltriggerid</key>
+				<string>details</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
 				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
+			<string>alfred.workflow.output.callexternaltrigger</string>
 			<key>uid</key>
-			<string>2293605A-8FEA-43C8-AF79-AB5567408A8F</string>
+			<string>C55D80BA-A82C-4C56-989F-A1ED6C8B3F29</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1772,10 +1933,12 @@ var response = app.displayAlert(alertText, {
 		</dict>
 		<key>172B3702-3EEC-4FE2-A49A-BACF5323514A</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
 			<key>xpos</key>
-			<real>655</real>
+			<real>1080</real>
 			<key>ypos</key>
-			<real>400</real>
+			<real>45</real>
 		</dict>
 		<key>1BAFB258-1F04-40F2-BA21-35CF2DE2987A</key>
 		<dict>
@@ -1808,10 +1971,12 @@ var response = app.displayAlert(alertText, {
 		</dict>
 		<key>2293605A-8FEA-43C8-AF79-AB5567408A8F</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
 			<key>xpos</key>
-			<real>830</real>
+			<real>1270</real>
 			<key>ypos</key>
-			<real>430</real>
+			<real>75</real>
 		</dict>
 		<key>2BC67259-5B0E-4067-8111-E104CAEEE727</key>
 		<dict>
@@ -1846,6 +2011,13 @@ var response = app.displayAlert(alertText, {
 			<real>655</real>
 			<key>ypos</key>
 			<real>165</real>
+		</dict>
+		<key>4DAC7A29-A580-450C-95CD-269C4C683147</key>
+		<dict>
+			<key>xpos</key>
+			<real>655</real>
+			<key>ypos</key>
+			<real>315</real>
 		</dict>
 		<key>4E906ED5-B3D5-4F8E-AF8E-738D4D693997</key>
 		<dict>
@@ -1937,10 +2109,12 @@ var response = app.displayAlert(alertText, {
 		</dict>
 		<key>830F3986-D17B-4CA4-8682-F0A5E286E7BD</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
 			<key>xpos</key>
-			<real>920</real>
+			<real>1365</real>
 			<key>ypos</key>
-			<real>400</real>
+			<real>45</real>
 		</dict>
 		<key>84DA8248-BB6E-43D9-9943-907BADB26CC9</key>
 		<dict>
@@ -1976,7 +2150,7 @@ var response = app.displayAlert(alertText, {
 			<key>xpos</key>
 			<real>485</real>
 			<key>ypos</key>
-			<real>295</real>
+			<real>260</real>
 		</dict>
 		<key>91DE80F1-34FB-47FC-89C4-CC4A4114A36B</key>
 		<dict>
@@ -2061,12 +2235,19 @@ var response = app.displayAlert(alertText, {
 			<key>ypos</key>
 			<real>800</real>
 		</dict>
+		<key>B4AD0C00-95F9-4053-84A4-A98C00313EAE</key>
+		<dict>
+			<key>xpos</key>
+			<real>655</real>
+			<key>ypos</key>
+			<real>360</real>
+		</dict>
 		<key>C55D80BA-A82C-4C56-989F-A1ED6C8B3F29</key>
 		<dict>
 			<key>xpos</key>
 			<real>655</real>
 			<key>ypos</key>
-			<real>285</real>
+			<real>405</real>
 		</dict>
 		<key>D11C8BF6-AA1C-43B0-964D-BA70A16C83CF</key>
 		<dict>
@@ -2095,6 +2276,13 @@ var response = app.displayAlert(alertText, {
 			<key>ypos</key>
 			<real>515</real>
 		</dict>
+		<key>E94C6938-8C85-4DBE-A61A-480ACA3DA136</key>
+		<dict>
+			<key>xpos</key>
+			<real>730</real>
+			<key>ypos</key>
+			<real>285</real>
+		</dict>
 		<key>F516F95A-574D-4A79-9DB8-535B0D46F56F</key>
 		<dict>
 			<key>xpos</key>
@@ -2112,6 +2300,13 @@ var response = app.displayAlert(alertText, {
 			<real>265</real>
 			<key>ypos</key>
 			<real>800</real>
+		</dict>
+		<key>FA003EB0-09C4-47E7-9C74-912C82153798</key>
+		<dict>
+			<key>xpos</key>
+			<real>655</real>
+			<key>ypos</key>
+			<real>270</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
@@ -2157,6 +2352,142 @@ var response = app.displayAlert(alertText, {
 			<string>textfield</string>
 			<key>variable</key>
 			<string>private_folders</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>Copy Password</string>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>Copy Username</string>
+						<string>Copy Username</string>
+					</array>
+					<array>
+						<string>Copy Password</string>
+						<string>Copy Password</string>
+					</array>
+					<array>
+						<string>Copy ID</string>
+						<string>Copy ID</string>
+					</array>
+					<array>
+						<string>Show Details</string>
+						<string>Show Details</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>↩</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>modifier_return</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>Show Details</string>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>Copy Password</string>
+						<string>Copy Password</string>
+					</array>
+					<array>
+						<string>Copy Username</string>
+						<string>Copy Username</string>
+					</array>
+					<array>
+						<string>Copy ID</string>
+						<string>Copy ID</string>
+					</array>
+					<array>
+						<string>Show Details</string>
+						<string>Show Details</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>⌘↩</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>modifier_cmd</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>Copy Username</string>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>Copy Username</string>
+						<string>Copy Username</string>
+					</array>
+					<array>
+						<string>Copy Password</string>
+						<string>Copy Password</string>
+					</array>
+					<array>
+						<string>Copy ID</string>
+						<string>Copy ID</string>
+					</array>
+					<array>
+						<string>Show Details</string>
+						<string>Show Details</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>⌥↩</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>modifier_opt</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>Copy ID</string>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>Copy Username</string>
+						<string>Copy Username</string>
+					</array>
+					<array>
+						<string>Copy Password</string>
+						<string>Copy Password</string>
+					</array>
+					<array>
+						<string>Copy ID</string>
+						<string>Copy ID</string>
+					</array>
+					<array>
+						<string>Show Details</string>
+						<string>Show Details</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>⌃↩</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>modifier_ctrl</string>
 		</dict>
 		<dict>
 			<key>config</key>
