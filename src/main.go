@@ -1,7 +1,6 @@
 package main
 
 import (
-    "flag"
     "fmt"
     "log"
     "os"
@@ -22,41 +21,26 @@ type WorkflowConfig struct {
     ModifierCtrl   string `env:"modifier_ctrl"`
 }
 
-type LastpassFolder struct {
-    Name string
-}
-
-type LastpassEntry struct {
-    ID       string
-    Name     string
-    Folder   string
-    URL      string
-    Username string
-    Password string
-}
-
 const (
     repo          = "rwilgaard/alfred-lastpass-search"
     updateJobName = "checkForUpdates"
 )
 
 var (
-    wf              *aw.Workflow
-    searchFlag      string
-    detailsFlag     string
-    foldersFlag     string
-    updateFlag      bool
-    listFoldersFlag bool
-    cfg             *WorkflowConfig
+    wf         *aw.Workflow
+    cfg        *WorkflowConfig
+    iconFolder = &aw.Icon{Value: "icons/group.png"}
+    iconBack   = &aw.Icon{Value: "icons/go_back.png"}
+    iconSN     = &aw.Icon{Value: "icons/sn.png"}
+    iconPW     = &aw.Icon{Value: "icons/password.png"}
 )
 
 func init() {
-    wf = aw.New(aw.MaxResults(25), update.GitHub(repo), aw.SuppressUIDs(true))
-    flag.StringVar(&searchFlag, "search", "", "search entries")
-    flag.StringVar(&detailsFlag, "details", "", "item details")
-    flag.StringVar(&foldersFlag, "folders", "", "only search in specified folders")
-    flag.BoolVar(&updateFlag, "update", false, "check for updates")
-    flag.BoolVar(&listFoldersFlag, "listfolders", false, "list all folders")
+    wf = aw.New(
+        aw.MaxResults(25),
+        update.GitHub(repo),
+        aw.SuppressUIDs(true),
+    )
 }
 
 func reSearch(regex *regexp.Regexp, query string) string {
@@ -77,9 +61,6 @@ func hasAll(input string, words []string) bool {
     return true
 }
 
-func isLoggedIn() bool {
-    cmd := exec.Command(cfg.LpassBin, "status", "--quiet")
-    if err := cmd.Run(); err != nil {
 func checkValidity(entry LastpassEntry, action string) bool {
     if action == "Copy Password" && entry.Password == "" {
         return false
@@ -89,100 +70,13 @@ func checkValidity(entry LastpassEntry, action string) bool {
     return true
 }
 
-func getFolders() ([]LastpassFolder, error) {
-    cmd := cfg.LpassBin + " ls --format %aN,%al --sync=no | grep ',http://group$' | cut -d, -f1 | sort -u"
-    out, err := exec.Command("bash", "-c", cmd).Output()
-    if err != nil {
-        return nil, err
-    }
-
-    var folders []LastpassFolder
-    for _, f := range strings.Split(string(out), "\n") {
-        lf := LastpassFolder{
-            Name: f,
-        }
-        folders = append(folders, lf)
-    }
-
-    return folders, nil
-}
-
-func getEntries(query string, folder string) []LastpassEntry {
-    cmd := exec.Command(cfg.LpassBin, "ls", "--format", "%aN [id: %ai] [url: %al] [username: %au] %ap", "--sync=no", folder)
-    out, err := cmd.Output()
-
-    if err != nil {
-        panic(err)
-    }
-
-    idRegex := regexp.MustCompile(`\[id: ([0-9]+)\]`)
-    urlRegex := regexp.MustCompile(`\[url: (.+?)\]`)
-    nameRegex := regexp.MustCompile(`^.*?\/(.*?)\s\[`)
-    folderRegex := regexp.MustCompile(`^(.*?)\/`)
-    usernameRegex := regexp.MustCompile(`\[username: (.+?)\]`)
-    passwordRegex := regexp.MustCompile(`.*\] (.*)$`)
-
-    var entries []LastpassEntry
-    for _, l := range strings.Split(string(out), "\n") {
-        id := reSearch(idRegex, l)
-        name := reSearch(nameRegex, l)
-        folder := reSearch(folderRegex, l)
-        url := reSearch(urlRegex, l)
-        username := reSearch(usernameRegex, l)
-        password := reSearch(passwordRegex, l)
-        e := fmt.Sprintf("%s %s %s %s %s", id, name, folder, url, username)
-        if url == "http://group" {
-            continue
-        }
-        if !hasAll(strings.ToLower(e), strings.Split(strings.ToLower(query), " ")) {
-            continue
-        }
-        entries = append(entries, LastpassEntry{
-            ID:       id,
-            Name:     name,
-            Folder:   folder,
-            URL:      url,
-            Username: username,
-            Password: password,
-        })
-    }
-    return entries
-}
-
-func getDetails(itemID string) ([]string, map[string]string) {
-    cmd := exec.Command(cfg.LpassBin, "show", itemID, "--sync=no")
-    out, err := cmd.Output()
-
-    if err != nil {
-        panic(err)
-    }
-
-    keyRegex := regexp.MustCompile(`^(\S.+?):`)
-    valRegex := regexp.MustCompile(`^\S.+?: (.*)`)
-    keys := []string{}
-    details := make(map[string]string)
-    for i, l := range strings.Split(string(out), "\n") {
-        if i == 0 {
-            continue
-        }
-        key := reSearch(keyRegex, l)
-        val := reSearch(valRegex, l)
-        keys = append(keys, key)
-        details[key] = val
-        if key == "Notes" {
-            break
-        }
-    }
-    return keys, details
-}
-
 func run() {
-    wf.Args()
-    flag.Parse()
+    if err := cli.Parse(wf.Args()); err != nil {
+        wf.FatalError(err)
+    }
+    opts.Query = cli.Arg(0)
 
-    wf.Configure(aw.SuppressUIDs(true))
-
-    if updateFlag {
+    if opts.Update {
         wf.Configure(aw.TextErrors(true))
         log.Println("Checking for updates...")
         if err := wf.CheckForUpdate(); err != nil {
@@ -223,11 +117,7 @@ func run() {
         return
     }
 
-    backIcon := aw.Icon{Value: fmt.Sprintf("%s/icons/go_back.png", wf.Dir())}
-
-    if listFoldersFlag {
-        wf.Configure(aw.SuppressUIDs(true))
-        folderIcon := aw.Icon{Value: fmt.Sprintf("%s/icons/group.png", wf.Dir())}
+    if opts.ListFolders {
         folders, err := getFolders()
         if err != nil {
             wf.FatalError(err)
@@ -240,18 +130,21 @@ func run() {
 
         for _, f := range folders {
             wf.NewItem(f.Name).
-                Icon(&folderIcon).
+                Icon(iconFolder).
                 Var("folder", f.Name).
                 Valid(true)
         }
 
-        wf.Filter(searchFlag)
+        wf.Filter(opts.Query)
         wf.SendFeedback()
         return
     }
 
-    if detailsFlag != "" {
-        keys, details := getDetails(detailsFlag)
+    if opts.Details {
+        keys, details, err := getDetails(opts.Query)
+        if err != nil {
+            wf.FatalError(err)
+        }
         excluded := []string{
             "id", "name", "fullname", "last_modified_gmt",
             "last_touch", "extra_fields", "folder", "notetype",
@@ -263,7 +156,7 @@ func run() {
         }
 
         wf.NewItem("Go back").
-            Icon(&backIcon).
+            Icon(iconBack).
             Arg("go_back").
             Valid(true)
 
@@ -312,22 +205,27 @@ ID: %s`, fullname, os.Getenv("item_id"))
     }
 
     var entries []LastpassEntry
-    for _, folder := range strings.Split(foldersFlag, ",") {
-        entries = append(entries, getEntries(searchFlag, strings.TrimSpace(folder))...)
+    for _, folder := range strings.Split(opts.Folders, ",") {
+        l, err := getEntries(opts.Query, strings.TrimSpace(folder))
+        if err != nil {
+            wf.FatalError(err)
+        }
+        entries = append(entries, l...)
     }
     for _, e := range entries {
-        icon := aw.Icon{Value: fmt.Sprintf("%s/icons/password.png", wf.Dir())}
+        icon := iconPW
         if e.URL == "http://sn" {
-            icon = aw.Icon{Value: fmt.Sprintf("%s/icons/sn.png", wf.Dir())}
+            icon = iconSN
         }
+
         it := wf.NewItem(e.Name).
             Subtitle(fmt.Sprintf("%s  •  ID: %s", e.Folder, e.ID)).
-            Icon(&icon).
+            Icon(icon).
             Var("item_id", e.ID).
             Var("item_name", e.Name).
             Var("item_url", e.URL).
             Var("item_folder", e.Folder).
-            Var("query", searchFlag).
+            Var("query", opts.Query).
             Var("action", cfg.ModifierReturn).
             Valid(checkValidity(e, cfg.ModifierReturn))
 
