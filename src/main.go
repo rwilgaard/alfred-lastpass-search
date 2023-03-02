@@ -80,6 +80,10 @@ func hasAll(input string, words []string) bool {
 func isLoggedIn() bool {
     cmd := exec.Command(cfg.LpassBin, "status", "--quiet")
     if err := cmd.Run(); err != nil {
+func checkValidity(entry LastpassEntry, action string) bool {
+    if action == "Copy Password" && entry.Password == "" {
+        return false
+    } else if action == "Copy Username" && entry.Username == "" {
         return false
     }
     return true
@@ -325,22 +329,28 @@ ID: %s`, fullname, os.Getenv("item_id"))
             Var("item_folder", e.Folder).
             Var("query", searchFlag).
             Var("action", cfg.ModifierReturn).
-            Valid(true)
+            Valid(checkValidity(e, cfg.ModifierReturn))
 
-        it.NewModifier(aw.ModCtrl).
-            Subtitle(cfg.ModifierCtrl).
-            Var("action", cfg.ModifierCtrl).
-            Valid(true)
+        if checkValidity(e, cfg.ModifierCtrl) {
+            it.NewModifier(aw.ModCtrl).
+                Subtitle(cfg.ModifierCtrl).
+                Var("action", cfg.ModifierCtrl).
+                Valid(true)
+        }
 
-        it.NewModifier(aw.ModOpt).
-            Subtitle(cfg.ModifierOpt).
-            Var("action", cfg.ModifierOpt).
-            Valid(true)
+        if checkValidity(e, cfg.ModifierOpt) {
+            it.NewModifier(aw.ModOpt).
+                Subtitle(cfg.ModifierOpt).
+                Var("action", cfg.ModifierOpt).
+                Valid(true)
+        }
 
-        it.NewModifier(aw.ModCmd).
-            Subtitle(cfg.ModifierCmd).
-            Var("action", cfg.ModifierCmd).
-            Valid(true)
+        if checkValidity(e, cfg.ModifierCmd) {
+            it.NewModifier(aw.ModCmd).
+                Subtitle(cfg.ModifierCmd).
+                Var("action", cfg.ModifierCmd).
+                Valid(true)
+        }
     }
 
     if wf.IsEmpty() {
