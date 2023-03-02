@@ -789,7 +789,7 @@
 				<key>runningsubtext</key>
 				<string>Searching for entries in Lastpass...</string>
 				<key>script</key>
-				<string>./alfred-lastpass-search -search "$1"</string>
+				<string>./alfred-lastpass-search "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -1091,7 +1091,7 @@
 				<key>runningsubtext</key>
 				<string>Searching for entries in Lastpass...</string>
 				<key>script</key>
-				<string>./alfred-lastpass-search -search "$1" -folders "${private_folders}"</string>
+				<string>./alfred-lastpass-search -folders "${private_folders}" "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -1335,7 +1335,7 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>./alfred-lastpass-search -details $item_id</string>
+				<string>./alfred-lastpass-search -details "$item_id"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -1741,7 +1741,7 @@ var response = app.displayAlert(alertText, {
 				<key>runningsubtext</key>
 				<string>Fetching folders...</string>
 				<key>script</key>
-				<string>./alfred-lastpass-search -listfolders -search "$1"</string>
+				<string>./alfred-lastpass-search -listfolders "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
