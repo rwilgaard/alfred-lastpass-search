@@ -29,10 +29,6 @@ const (
 var (
     wf         *aw.Workflow
     cfg        *WorkflowConfig
-    iconFolder = &aw.Icon{Value: "icons/group.png"}
-    iconBack   = &aw.Icon{Value: "icons/go_back.png"}
-    iconSN     = &aw.Icon{Value: "icons/sn.png"}
-    iconPW     = &aw.Icon{Value: "icons/password.png"}
 )
 
 func init() {
@@ -174,6 +170,7 @@ func run() {
             }
             if key == "Notes" {
                 wf.NewItem(key).
+                    Icon(getIcon(key)).
                     Subtitle("Press ⏎ to show notes").
                     Arg("notes").
                     Var("notes", value).
@@ -181,12 +178,14 @@ func run() {
                 continue
             }
             wf.NewItem(key).
+                Icon(getIcon(key)).
                 Subtitle(sub).
                 Arg(value).
                 Valid(true)
         }
 
         wf.NewItem("Edit entry").
+            Icon(iconEdit).
             Arg("edit").
             Valid(true)
 
@@ -196,6 +195,7 @@ Name: %s
 ID: %s`, fullname, os.Getenv("item_id"))
 
         wf.NewItem("Delete entry").
+            Icon(iconDelete).
             Arg("delete").
             Var("msg", deleteMsg).
             Valid(true)
