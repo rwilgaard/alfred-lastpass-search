@@ -2511,6 +2511,10 @@ var response = app.displayAlert(alertText, {
 	</array>
 	<key>variables</key>
 	<dict>
+		<key>LPASS_AGENT_TIMEOUT
+LPASS_AGENT_TIMEOUT=18800
+LPASS_AGENT_TIMEOUT</key>
+		<string>18800</string>
 		<key>PATH</key>
 		<string>/bin:/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/opt/homebrew/bin/</string>
 	</dict>
