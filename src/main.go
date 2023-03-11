@@ -165,8 +165,10 @@ func run() {
                 continue
             }
             sub := value
+            sensitive := "false"
             if slices.Contains(redacted, strings.ToLower(key)) {
                 sub = strings.Repeat("•", 32)
+                sensitive = "true"
             }
             if key == "Notes" {
                 wf.NewItem(key).
@@ -174,6 +176,7 @@ func run() {
                     Subtitle("Press ⏎ to show notes").
                     Arg("notes").
                     Var("notes", value).
+                    Var("sensitive", sensitive).
                     Valid(true)
                 continue
             }
@@ -181,6 +184,8 @@ func run() {
                 Icon(getIcon(key)).
                 Subtitle(sub).
                 Arg(value).
+                Var("sensitive", sensitive).
+                Var("field", key).
                 Valid(true)
         }
 

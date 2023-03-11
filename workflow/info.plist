@@ -56,6 +56,16 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>DC99D90F-BD3C-4324-8418-3BFCE45D7A8A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>1BAFB258-1F04-40F2-BA21-35CF2DE2987A</key>
 		<array>
@@ -165,7 +175,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>91DE80F1-34FB-47FC-89C4-CC4A4114A36B</string>
+				<string>F6C8B22E-0712-4D9F-B46C-F3080952EF44</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -227,7 +237,17 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>91DE80F1-34FB-47FC-89C4-CC4A4114A36B</string>
+				<string>B1B264E5-0737-464C-8B96-275F99775B40</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>CF7D3A20-8B86-4C4D-AD34-2F7F21965693</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -281,6 +301,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>9A34D7BF-153A-4190-ADBA-073F7CEB76A2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>72DA6669-FB83-4C5C-8D0C-2AF705A56B2E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F626AE57-1EBB-439B-8E97-C23BE9BEC97D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -517,6 +550,69 @@
 				<false/>
 			</dict>
 		</array>
+		<key>CF7D3A20-8B86-4C4D-AD34-2F7F21965693</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>91DE80F1-34FB-47FC-89C4-CC4A4114A36B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>3D4ACD4F-619E-4FA9-81BB-042C74049178</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>F6C8B22E-0712-4D9F-B46C-F3080952EF44</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D06DB843-97B5-4A4E-AFA5-038658D4CF1C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A7702042-B418-474D-9229-2D9A6F9AA719</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>DC99D90F-BD3C-4324-8418-3BFCE45D7A8A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>72DA6669-FB83-4C5C-8D0C-2AF705A56B2E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>3D4ACD4F-619E-4FA9-81BB-042C74049178</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>D06DB843-97B5-4A4E-AFA5-038658D4CF1C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>DEBCDDB5-A283-4FD7-910C-A94340430B41</key>
 		<array>
 			<dict>
@@ -583,136 +679,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Lastpass Search</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>830F3986-D17B-4CA4-8682-F0A5E286E7BD</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>69</integer>
-				<key>script</key>
-				<string>lpass show --sync=no --clip --${copy_field} "${item_id}" &amp;&amp; echo "${copy_field} copied to clipboard" || echo "Error copying ${copy_field} clipboard!"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>inboundconfig</key>
-			<dict>
-				<key>externalid</key>
-				<string>copy</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>172B3702-3EEC-4FE2-A49A-BACF5323514A</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string>{var:enable_notifications}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>5</integer>
-						<key>matchstring</key>
-						<string></string>
-						<key>outputlabel</key>
-						<string>enabled</string>
-						<key>uid</key>
-						<string>6753D302-435E-4371-8563-881C80D9E460</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>else</string>
-				<key>hideelse</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>2293605A-8FEA-43C8-AF79-AB5567408A8F</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>69</integer>
-				<key>script</key>
-				<string>LPASS_ASKPASS=./passwordprompt.js lpass login ${username} --trust</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>inboundconfig</key>
-			<dict>
-				<key>externalid</key>
-				<string>login</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>20C5774E-9136-4300-AA60-C6F4DDDB65B3</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>Succesfully logged in as {var:username}</string>
-				<key>title</key>
-				<string>Lastpass Search</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>D11C8BF6-AA1C-43B0-964D-BA70A16C83CF</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>externaltriggerid</key>
 				<string>login</string>
 				<key>passinputasargument</key>
@@ -726,38 +692,6 @@
 			<string>alfred.workflow.output.callexternaltrigger</string>
 			<key>uid</key>
 			<string>33E8DC82-8172-4C0F-B741-1BE2A45A68AF</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string>{var:enable_notifications}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>5</integer>
-						<key>matchstring</key>
-						<string></string>
-						<key>outputlabel</key>
-						<string>enabled</string>
-						<key>uid</key>
-						<string>6753D302-435E-4371-8563-881C80D9E460</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>else</string>
-				<key>hideelse</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>B0721EDF-A7CF-4C3D-B473-8555A4E00276</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -845,6 +779,55 @@
 			<string>F516F95A-574D-4A79-9DB8-535B0D46F56F</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>69</integer>
+				<key>script</key>
+				<string>LPASS_ASKPASS=./passwordprompt.js lpass login ${username} --trust</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>inboundconfig</key>
+			<dict>
+				<key>externalid</key>
+				<string>login</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>20C5774E-9136-4300-AA60-C6F4DDDB65B3</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Succesfully logged in as {var:username}</string>
+				<key>title</key>
+				<string>Lastpass Search</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>D11C8BF6-AA1C-43B0-964D-BA70A16C83CF</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -945,6 +928,8 @@
 				<dict>
 					<key>copy_field</key>
 					<string>username</string>
+					<key>sensitive</key>
+					<string>false</string>
 				</dict>
 			</dict>
 			<key>type</key>
@@ -957,19 +942,32 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>externaltriggerid</key>
-				<string>lpsync</string>
-				<key>passinputasargument</key>
-				<false/>
-				<key>passvariables</key>
-				<false/>
-				<key>workflowbundleid</key>
-				<string>self</string>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:enable_notifications}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>5</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>enabled</string>
+						<key>uid</key>
+						<string>6753D302-435E-4371-8563-881C80D9E460</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
+			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
-			<string>504DF36F-8336-4B52-953B-D9998D1529DB</string>
+			<string>B0721EDF-A7CF-4C3D-B473-8555A4E00276</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1003,6 +1001,8 @@
 				<dict>
 					<key>copy_field</key>
 					<string>password</string>
+					<key>sensitive</key>
+					<string>true</string>
 				</dict>
 			</dict>
 			<key>type</key>
@@ -1023,6 +1023,8 @@
 				<dict>
 					<key>copy_field</key>
 					<string>id</string>
+					<key>sensitive</key>
+					<string>false</string>
 				</dict>
 			</dict>
 			<key>type</key>
@@ -1035,33 +1037,21 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
+				<key>externaltriggerid</key>
+				<string>lpsync</string>
+				<key>passinputasargument</key>
 				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>35</integer>
-				<key>hotmod</key>
-				<integer>655360</integer>
-				<key>hotstring</key>
-				<string>P</string>
-				<key>leftcursor</key>
+				<key>passvariables</key>
 				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
+				<key>workflowbundleid</key>
+				<string>self</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
+			<string>alfred.workflow.output.callexternaltrigger</string>
 			<key>uid</key>
-			<string>6B303D76-B17A-4266-AFEA-E0FB7C4092F7</string>
+			<string>504DF36F-8336-4B52-953B-D9998D1529DB</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1115,17 +1105,33 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>escaping</key>
+				<key>action</key>
 				<integer>0</integer>
-				<key>script</key>
-				<string>lpass edit --sync=now {var:item_id}; exit</string>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>35</integer>
+				<key>hotmod</key>
+				<integer>655360</integer>
+				<key>hotstring</key>
+				<string>P</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.terminalcommand</string>
+			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
-			<string>6B62A320-E52A-4505-8A1C-6C42BDF7F840</string>
+			<string>6B303D76-B17A-4266-AFEA-E0FB7C4092F7</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1143,6 +1149,21 @@
 			<string>alfred.workflow.output.callexternaltrigger</string>
 			<key>uid</key>
 			<string>C55D80BA-A82C-4C56-989F-A1ED6C8B3F29</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>lpass edit --sync=now {var:item_id}; exit</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>6B62A320-E52A-4505-8A1C-6C42BDF7F840</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1244,34 +1265,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>lpass ls --sync=now 1&gt; /dev/null &amp;&amp; echo "Sync completed" || echo "Sync error!"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>inboundconfig</key>
-			<dict>
-				<key>externalid</key>
-				<string>lpsync</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>DEBCDDB5-A283-4FD7-910C-A94340430B41</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
@@ -1287,25 +1280,6 @@
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>B1FEC54A-CE55-42A7-A2A4-F356F1DAF46F</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>externaltriggerid</key>
-				<string>details</string>
-				<key>passinputasargument</key>
-				<false/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>self</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>E296F757-AF4A-48F3-B572-05B548A3E009</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1400,6 +1374,53 @@ var response = app.displayAlert(alertText, {
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>lpass ls --sync=now 1&gt; /dev/null &amp;&amp; echo "Sync completed" || echo "Sync error!"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>inboundconfig</key>
+			<dict>
+				<key>externalid</key>
+				<string>lpsync</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>DEBCDDB5-A283-4FD7-910C-A94340430B41</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>details</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>E296F757-AF4A-48F3-B572-05B548A3E009</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -1483,6 +1504,52 @@ var response = app.displayAlert(alertText, {
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>edit</string>
+						<key>outputlabel</key>
+						<string></string>
+						<key>uid</key>
+						<string>2EE6E9DC-BDAA-40CE-B804-D5B69B6AB904</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>delete</string>
+						<key>outputlabel</key>
+						<string></string>
+						<key>uid</key>
+						<string>9D95B0D7-C600-40CC-B597-776A8061FD4D</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>copy</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>335CBD01-5EFD-4ADD-B892-36AA36B22B4F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argument</key>
 				<string>{var:query}</string>
 				<key>passthroughargument</key>
@@ -1496,29 +1563,6 @@ var response = app.displayAlert(alertText, {
 			<string>30370047-D1BD-4EA2-840D-B385D10659B5</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>lpass logout -f 1&gt; /dev/null &amp;&amp; echo "Logged out" || echo "Error logging out!"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>AB717369-4357-4E01-B31F-4218CF0A5A31</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1565,34 +1609,25 @@ var response = app.displayAlert(alertText, {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string>{var:edit}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>1</integer>
-						<key>matchstring</key>
-						<string></string>
-						<key>outputlabel</key>
-						<string>edit</string>
-						<key>uid</key>
-						<string>2EE6E9DC-BDAA-40CE-B804-D5B69B6AB904</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>else</string>
-				<key>hideelse</key>
+				<key>concurrently</key>
 				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>lpass logout -f 1&gt; /dev/null &amp;&amp; echo "Logged out" || echo "Error logging out!"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>335CBD01-5EFD-4ADD-B892-36AA36B22B4F</string>
+			<string>AB717369-4357-4E01-B31F-4218CF0A5A31</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1636,7 +1671,7 @@ var response = app.displayAlert(alertText, {
 				<key>removeextension</key>
 				<false/>
 				<key>text</key>
-				<string>Item copied to clipboard</string>
+				<string>{var:field} copied to clipboard</string>
 				<key>title</key>
 				<string>Lastpass Search</string>
 			</dict>
@@ -1682,15 +1717,19 @@ var response = app.displayAlert(alertText, {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>escaping</key>
+				<key>argumenttype</key>
 				<integer>0</integer>
-				<key>script</key>
-				<string>lpass add --sync=now "{var:folder}{query}"; exit</string>
+				<key>subtext</key>
+				<string>Create entry: "{var:folder}{query}"</string>
+				<key>text</key>
+				<string>Enter entry name</string>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.terminalcommand</string>
+			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>B479C708-48E4-411D-8A23-7DA4F52B1AB4</string>
+			<string>1BAFB258-1F04-40F2-BA21-35CF2DE2987A</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1712,6 +1751,21 @@ var response = app.displayAlert(alertText, {
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>F531720E-CB90-47BA-8DD6-A80837132FFA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>lpass add --sync=now "{var:folder}{query}"; exit</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>B479C708-48E4-411D-8A23-7DA4F52B1AB4</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1765,19 +1819,51 @@ var response = app.displayAlert(alertText, {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>subtext</key>
-				<string>Create entry: "{var:folder}{query}"</string>
-				<key>text</key>
-				<string>Enter entry name</string>
-				<key>withspace</key>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
 				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
-			<string>1BAFB258-1F04-40F2-BA21-35CF2DE2987A</string>
+			<string>91DE80F1-34FB-47FC-89C4-CC4A4114A36B</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:sensitive}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>true</string>
+						<key>outputlabel</key>
+						<string>sensitive</string>
+						<key>uid</key>
+						<string>3D4ACD4F-619E-4FA9-81BB-042C74049178</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>CF7D3A20-8B86-4C4D-AD34-2F7F21965693</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1796,9 +1882,90 @@ var response = app.displayAlert(alertText, {
 			<key>type</key>
 			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
-			<string>91DE80F1-34FB-47FC-89C4-CC4A4114A36B</string>
+			<string>F6C8B22E-0712-4D9F-B46C-F3080952EF44</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>69</integer>
+				<key>script</key>
+				<string>lpass show --sync=no --${copy_field} "${item_id}"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>inboundconfig</key>
+			<dict>
+				<key>externalid</key>
+				<string>copy</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>172B3702-3EEC-4FE2-A49A-BACF5323514A</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{var:copy_field} copied!</string>
+				<key>title</key>
+				<string>Lastpass Search</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>830F3986-D17B-4CA4-8682-F0A5E286E7BD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:enable_notifications}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>5</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>enabled</string>
+						<key>uid</key>
+						<string>6753D302-435E-4371-8563-881C80D9E460</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>2293605A-8FEA-43C8-AF79-AB5567408A8F</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1868,6 +2035,25 @@ var response = app.displayAlert(alertText, {
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>F626AE57-1EBB-439B-8E97-C23BE9BEC97D</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -1897,6 +2083,83 @@ var response = app.displayAlert(alertText, {
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.transform</string>
+			<key>uid</key>
+			<string>72DA6669-FB83-4C5C-8D0C-2AF705A56B2E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:sensitive}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>true</string>
+						<key>outputlabel</key>
+						<string>sensitive</string>
+						<key>uid</key>
+						<string>3D4ACD4F-619E-4FA9-81BB-042C74049178</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>DC99D90F-BD3C-4324-8418-3BFCE45D7A8A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>A7702042-B418-474D-9229-2D9A6F9AA719</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.transform</string>
+			<key>uid</key>
+			<string>D06DB843-97B5-4A4E-AFA5-038658D4CF1C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -1909,7 +2172,7 @@ var response = app.displayAlert(alertText, {
 			<key>xpos</key>
 			<real>1570</real>
 			<key>ypos</key>
-			<real>955</real>
+			<real>1070</real>
 		</dict>
 		<key>0EB5162D-8D05-4954-BAD8-97E8E642129C</key>
 		<dict>
@@ -1935,10 +2198,12 @@ var response = app.displayAlert(alertText, {
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
+			<key>note</key>
+			<string>Copy</string>
 			<key>xpos</key>
-			<real>1080</real>
+			<real>265</real>
 			<key>ypos</key>
-			<real>45</real>
+			<real>975</real>
 		</dict>
 		<key>1BAFB258-1F04-40F2-BA21-35CF2DE2987A</key>
 		<dict>
@@ -1967,16 +2232,16 @@ var response = app.displayAlert(alertText, {
 			<key>xpos</key>
 			<real>1080</real>
 			<key>ypos</key>
-			<real>165</real>
+			<real>250</real>
 		</dict>
 		<key>2293605A-8FEA-43C8-AF79-AB5567408A8F</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<real>1270</real>
+			<real>560</real>
 			<key>ypos</key>
-			<real>75</real>
+			<real>1005</real>
 		</dict>
 		<key>2BC67259-5B0E-4067-8111-E104CAEEE727</key>
 		<dict>
@@ -1985,7 +2250,7 @@ var response = app.displayAlert(alertText, {
 			<key>xpos</key>
 			<real>1715</real>
 			<key>ypos</key>
-			<real>985</real>
+			<real>1100</real>
 		</dict>
 		<key>30370047-D1BD-4EA2-840D-B385D10659B5</key>
 		<dict>
@@ -2001,9 +2266,9 @@ var response = app.displayAlert(alertText, {
 			<key>colorindex</key>
 			<integer>12</integer>
 			<key>xpos</key>
-			<real>1280</real>
+			<real>1265</real>
 			<key>ypos</key>
-			<real>670</real>
+			<real>650</real>
 		</dict>
 		<key>33E8DC82-8172-4C0F-B741-1BE2A45A68AF</key>
 		<dict>
@@ -2035,7 +2300,7 @@ var response = app.displayAlert(alertText, {
 			<key>xpos</key>
 			<real>1365</real>
 			<key>ypos</key>
-			<real>275</real>
+			<real>360</real>
 		</dict>
 		<key>50A9D062-64A0-44DF-921C-3B24CEB85907</key>
 		<dict>
@@ -2071,7 +2336,7 @@ var response = app.displayAlert(alertText, {
 			<key>xpos</key>
 			<real>1780</real>
 			<key>ypos</key>
-			<real>955</real>
+			<real>1070</real>
 		</dict>
 		<key>6B303D76-B17A-4266-AFEA-E0FB7C4092F7</key>
 		<dict>
@@ -2098,6 +2363,15 @@ var response = app.displayAlert(alertText, {
 			<key>ypos</key>
 			<real>625</real>
 		</dict>
+		<key>72DA6669-FB83-4C5C-8D0C-2AF705A56B2E</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<real>560</real>
+			<key>ypos</key>
+			<real>1110</real>
+		</dict>
 		<key>79E64DC4-9144-4504-B57B-73B95CEF5BD8</key>
 		<dict>
 			<key>colorindex</key>
@@ -2112,9 +2386,9 @@ var response = app.displayAlert(alertText, {
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<real>1365</real>
+			<real>660</real>
 			<key>ypos</key>
-			<real>45</real>
+			<real>975</real>
 		</dict>
 		<key>84DA8248-BB6E-43D9-9943-907BADB26CC9</key>
 		<dict>
@@ -2179,14 +2453,23 @@ var response = app.displayAlert(alertText, {
 			<key>ypos</key>
 			<real>800</real>
 		</dict>
+		<key>A7702042-B418-474D-9229-2D9A6F9AA719</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<real>660</real>
+			<key>ypos</key>
+			<real>1185</real>
+		</dict>
 		<key>A782A61A-A32D-4D42-8EC5-DF2B5F8DE2BE</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>12</integer>
 			<key>xpos</key>
-			<real>1395</real>
+			<real>1415</real>
 			<key>ypos</key>
-			<real>845</real>
+			<real>1035</real>
 		</dict>
 		<key>AB717369-4357-4E01-B31F-4218CF0A5A31</key>
 		<dict>
@@ -2204,7 +2487,7 @@ var response = app.displayAlert(alertText, {
 			<key>xpos</key>
 			<real>1270</real>
 			<key>ypos</key>
-			<real>195</real>
+			<real>280</real>
 		</dict>
 		<key>B1B264E5-0737-464C-8B96-275F99775B40</key>
 		<dict>
@@ -2249,6 +2532,24 @@ var response = app.displayAlert(alertText, {
 			<key>ypos</key>
 			<real>405</real>
 		</dict>
+		<key>CF7D3A20-8B86-4C4D-AD34-2F7F21965693</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
+			<key>xpos</key>
+			<real>1410</real>
+			<key>ypos</key>
+			<real>920</real>
+		</dict>
+		<key>D06DB843-97B5-4A4E-AFA5-038658D4CF1C</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<real>560</real>
+			<key>ypos</key>
+			<real>1215</real>
+		</dict>
 		<key>D11C8BF6-AA1C-43B0-964D-BA70A16C83CF</key>
 		<dict>
 			<key>colorindex</key>
@@ -2256,7 +2557,16 @@ var response = app.displayAlert(alertText, {
 			<key>xpos</key>
 			<real>1365</real>
 			<key>ypos</key>
-			<real>165</real>
+			<real>250</real>
+		</dict>
+		<key>DC99D90F-BD3C-4324-8418-3BFCE45D7A8A</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<real>430</real>
+			<key>ypos</key>
+			<real>1150</real>
 		</dict>
 		<key>DEBCDDB5-A283-4FD7-910C-A94340430B41</key>
 		<dict>
@@ -2300,6 +2610,24 @@ var response = app.displayAlert(alertText, {
 			<real>265</real>
 			<key>ypos</key>
 			<real>800</real>
+		</dict>
+		<key>F626AE57-1EBB-439B-8E97-C23BE9BEC97D</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<real>660</real>
+			<key>ypos</key>
+			<real>1080</real>
+		</dict>
+		<key>F6C8B22E-0712-4D9F-B46C-F3080952EF44</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
+			<key>xpos</key>
+			<real>1570</real>
+			<key>ypos</key>
+			<real>955</real>
 		</dict>
 		<key>FA003EB0-09C4-47E7-9C74-912C82153798</key>
 		<dict>
