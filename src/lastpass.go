@@ -114,3 +114,14 @@ func getDetails(itemID string) ([]string, map[string]string, error) {
     }
     return keys, details, nil
 }
+
+func addEntry(name string, password string) error {
+    cmd := fmt.Sprintf("echo -ne 'Password: %s' | %s add '%s' --non-interactive --sync=now", password, cfg.LpassBin, name)
+    _, err := exec.Command("bash", "-c", cmd).Output()
+
+    if err != nil {
+        return err
+    }
+
+    return nil
+}

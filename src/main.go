@@ -10,6 +10,7 @@ import (
 
     aw "github.com/deanishe/awgo"
     "github.com/deanishe/awgo/update"
+    "github.com/sethvargo/go-password/password"
     "golang.org/x/exp/slices"
 )
 
@@ -19,6 +20,7 @@ type WorkflowConfig struct {
     ModifierCmd    string `env:"modifier_cmd"`
     ModifierOpt    string `env:"modifier_opt"`
     ModifierCtrl   string `env:"modifier_ctrl"`
+    AllowedSymbols string `env:"allowed_symbols"`
 }
 
 const (
@@ -27,8 +29,8 @@ const (
 )
 
 var (
-    wf         *aw.Workflow
-    cfg        *WorkflowConfig
+    wf  *aw.Workflow
+    cfg *WorkflowConfig
 )
 
 func init() {
@@ -64,6 +66,29 @@ func checkValidity(entry LastpassEntry, action string) bool {
         return false
     }
     return true
+}
+
+func generatePassword(length int, symbols bool) (string, error) {
+    input := password.GeneratorInput{
+        Symbols: cfg.AllowedSymbols,
+    }
+
+    sc := 0
+    if symbols {
+        sc = length / 4
+    }
+
+    gen, err := password.NewGenerator(&input)
+    if err != nil {
+        return "", err
+    }
+
+    pw, err := gen.Generate(length, length/4, sc, false, true)
+    if err != nil {
+        return "", err
+    }
+
+    return pw, nil
 }
 
 func run() {
@@ -111,6 +136,17 @@ func run() {
             Valid(true)
         wf.SendFeedback()
         return
+    }
+
+    if opts.Generate {
+        pw, err := generatePassword(opts.Length, true)
+        if err != nil {
+            wf.FatalError(err)
+        }
+
+        if err := addEntry(opts.Name, pw); err != nil {
+            wf.FatalError(err)
+        }
     }
 
     if opts.ListFolders {
