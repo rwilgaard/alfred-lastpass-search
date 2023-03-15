@@ -27,8 +27,8 @@ const (
 )
 
 var (
-    wf         *aw.Workflow
-    cfg        *WorkflowConfig
+    wf  *aw.Workflow
+    cfg *WorkflowConfig
 )
 
 func init() {
@@ -175,7 +175,6 @@ func run() {
                     Icon(getIcon(key)).
                     Subtitle("Press ⏎ to show notes").
                     Arg("notes").
-                    Var("notes", value).
                     Var("sensitive", sensitive).
                     Valid(true)
                 continue
