@@ -1,10 +1,10 @@
 package main
 
 import (
-	"fmt"
-	"os/exec"
-	"regexp"
-	"strings"
+    "fmt"
+    "os/exec"
+    "regexp"
+    "strings"
 )
 
 type LastpassFolder struct {
@@ -108,6 +108,7 @@ func getDetails(itemID string) ([]string, map[string]string, error) {
         val := reSearch(valRegex, l)
         keys = append(keys, key)
         details[key] = val
+
         if key == "Notes" {
             break
         }
