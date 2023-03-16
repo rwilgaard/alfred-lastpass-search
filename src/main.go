@@ -10,6 +10,7 @@ import (
 
     aw "github.com/deanishe/awgo"
     "github.com/deanishe/awgo/update"
+    "github.com/sethvargo/go-password/password"
     "golang.org/x/exp/slices"
 )
 
@@ -19,6 +20,7 @@ type WorkflowConfig struct {
     ModifierCmd    string `env:"modifier_cmd"`
     ModifierOpt    string `env:"modifier_opt"`
     ModifierCtrl   string `env:"modifier_ctrl"`
+    AllowedSymbols string `env:"allowed_symbols"`
 }
 
 const (
@@ -66,6 +68,29 @@ func checkValidity(entry LastpassEntry, action string) bool {
     return true
 }
 
+func generatePassword(length int, symbols bool) (string, error) {
+    input := password.GeneratorInput{
+        Symbols: cfg.AllowedSymbols,
+    }
+
+    sc := 0
+    if symbols {
+        sc = length / 4
+    }
+
+    gen, err := password.NewGenerator(&input)
+    if err != nil {
+        return "", err
+    }
+
+    pw, err := gen.Generate(length, length/4, sc, false, true)
+    if err != nil {
+        return "", err
+    }
+
+    return pw, nil
+}
+
 func run() {
     if err := cli.Parse(wf.Args()); err != nil {
         wf.FatalError(err)
@@ -109,6 +134,37 @@ func run() {
             Subtitle("Press ⏎ to login.").
             Arg("auth").
             Valid(true)
+        wf.SendFeedback()
+        return
+    }
+
+    if opts.Generate {
+        pws, err := generatePassword(opts.Length, true)
+        if err != nil {
+            wf.FatalError(err)
+        }
+        pwn, err := generatePassword(opts.Length, false)
+        if err != nil {
+            wf.FatalError(err)
+        }
+
+        sub := fmt.Sprintf("⏎ to copy to clipboard  •  ⌘⏎ to add to LastPass  •  Length: %d", opts.Length)
+        wf.NewItem(pws).
+            Subtitle(sub).
+            Var("password", pws).
+            Arg("copy").
+            Valid(true).
+            NewModifier(aw.ModCmd).
+            Arg("add")
+
+        wf.NewItem(pwn).
+            Subtitle(sub + "  •  No symbols").
+            Var("password", pwn).
+            Arg("copy").
+            Valid(true).
+            NewModifier(aw.ModCmd).
+            Arg("add")
+
         wf.SendFeedback()
         return
     }
