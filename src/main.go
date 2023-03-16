@@ -139,14 +139,34 @@ func run() {
     }
 
     if opts.Generate {
-        pw, err := generatePassword(opts.Length, true)
+        pws, err := generatePassword(opts.Length, true)
+        if err != nil {
+            wf.FatalError(err)
+        }
+        pwn, err := generatePassword(opts.Length, false)
         if err != nil {
             wf.FatalError(err)
         }
 
-        if err := addEntry(opts.Name, pw); err != nil {
-            wf.FatalError(err)
-        }
+        sub := fmt.Sprintf("⏎ to copy to clipboard  •  ⌘⏎ to add to LastPass  •  Length: %d", opts.Length)
+        wf.NewItem(pws).
+            Subtitle(sub).
+            Var("password", pws).
+            Arg("copy").
+            Valid(true).
+            NewModifier(aw.ModCmd).
+            Arg("add")
+
+        wf.NewItem(pwn).
+            Subtitle(sub + "  •  No symbols").
+            Var("password", pwn).
+            Arg("copy").
+            Valid(true).
+            NewModifier(aw.ModCmd).
+            Arg("add")
+
+        wf.SendFeedback()
+        return
     }
 
     if opts.ListFolders {
