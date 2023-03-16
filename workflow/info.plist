@@ -2790,7 +2790,7 @@ function run(argument){
 		</dict>
 	</array>
 	<key>readme</key>
-	<string># Lastpass Search
+	<string># LastPass Search
 
 A workflow for searching in LastPass. This workflow uses the [LastPass CLI](https://github.com/lastpass/lastpass-cli).
 
@@ -2810,7 +2810,7 @@ The easiest way to install the LastPass CLI is using [Homebrew](https://brew.sh/
 * `lp` search for entries in the entire LastPass vault. A hotkey can be configured for this keyword.
 * `lpp` search for entries only in specified private folders. The private folders can be configured in the **User Configuration**. A hotkey can be configured for this keyword.
 * `lpadd` add new entry to LastPass.
-* `lpgen` generate a new random password and copy it to the clipboard or add it directly to LastPass.
+* `lpgen` generate a new random password and copy it to the clipboard or add it directly to LastPass. The default length is 32 characters, but you can also specify the length after `lpgen`.
 * `lpsync` run a manual sync of the Lastpass Vault.
 * `lpout` logout of LastPass.
 

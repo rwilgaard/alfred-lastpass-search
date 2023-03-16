@@ -19,7 +19,7 @@ brew install lastpass-cli
 * `lp` search for entries in the entire LastPass vault. A hotkey can be configured for this keyword.
 * `lpp` search for entries only in specified private folders. The private folders can be configured in the **User Configuration**. A hotkey can be configured for this keyword.
 * `lpadd` add new entry to LastPass.
-* `lpgen` generate a random password and add it to Lastpass.
+* `lpgen` generate a new random password and copy it to the clipboard or add it directly to LastPass. The default length is 32 characters, but you can also specify the length after `lpgen`.
 * `lpsync` run a manual sync of the Lastpass Vault.
 * `lpout` logout of LastPass.
 
