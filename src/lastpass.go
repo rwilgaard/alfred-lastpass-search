@@ -108,6 +108,7 @@ func getDetails(itemID string) ([]string, map[string]string, error) {
         val := reSearch(valRegex, l)
         keys = append(keys, key)
         details[key] = val
+
         if key == "Notes" {
             break
         }

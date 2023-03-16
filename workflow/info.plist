@@ -635,6 +635,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>A21D01DA-5DEA-4635-A690-A80C274461F0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>72319E72-4950-46FF-B106-36768FEEE072</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>A782A61A-A32D-4D42-8EC5-DF2B5F8DE2BE</key>
 		<array>
 			<dict>
@@ -1369,6 +1382,55 @@
 			<string>6B303D76-B17A-4266-AFEA-E0FB7C4092F7</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>69</integer>
+				<key>script</key>
+				<string>LPASS_ASKPASS=./passwordprompt.js lpass login ${username} --trust</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>inboundconfig</key>
+			<dict>
+				<key>externalid</key>
+				<string>login</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>20C5774E-9136-4300-AA60-C6F4DDDB65B3</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Succesfully logged in as {var:username}</string>
+				<key>title</key>
+				<string>Lastpass Search</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>D11C8BF6-AA1C-43B0-964D-BA70A16C83CF</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2647,7 +2709,7 @@ function run(argument){
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
-			<string>2293605A-8FEA-43C8-AF79-AB5567408A8F</string>
+			<string>2BC67259-5B0E-4067-8111-E104CAEEE727</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2929,7 +2991,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>1375</real>
 			<key>ypos</key>
-			<real>975</real>
+			<real>1075</real>
 		</dict>
 		<key>1BAFB258-1F04-40F2-BA21-35CF2DE2987A</key>
 		<dict>
@@ -2967,7 +3029,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>1670</real>
 			<key>ypos</key>
-			<real>1005</real>
+			<real>1105</real>
 		</dict>
 		<key>2AC2769E-45A8-48F8-9EE3-6DB1D0A99643</key>
 		<dict>
@@ -3177,6 +3239,15 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>ypos</key>
 			<real>955</real>
 		</dict>
+		<key>72319E72-4950-46FF-B106-36768FEEE072</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<real>785</real>
+			<key>ypos</key>
+			<real>830</real>
+		</dict>
 		<key>72DA6669-FB83-4C5C-8D0C-2AF705A56B2E</key>
 		<dict>
 			<key>colorindex</key>
@@ -3184,7 +3255,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>1670</real>
 			<key>ypos</key>
-			<real>1110</real>
+			<real>1210</real>
 		</dict>
 		<key>79E64DC4-9144-4504-B57B-73B95CEF5BD8</key>
 		<dict>
@@ -3202,7 +3273,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>1770</real>
 			<key>ypos</key>
-			<real>975</real>
+			<real>1075</real>
 		</dict>
 		<key>84DA8248-BB6E-43D9-9943-907BADB26CC9</key>
 		<dict>
@@ -3301,7 +3372,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>1770</real>
 			<key>ypos</key>
-			<real>1185</real>
+			<real>1285</real>
 		</dict>
 		<key>A782A61A-A32D-4D42-8EC5-DF2B5F8DE2BE</key>
 		<dict>
@@ -3398,7 +3469,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>1670</real>
 			<key>ypos</key>
-			<real>1215</real>
+			<real>1315</real>
 		</dict>
 		<key>D11C8BF6-AA1C-43B0-964D-BA70A16C83CF</key>
 		<dict>
@@ -3420,6 +3491,17 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>ypos</key>
 			<real>925</real>
 		</dict>
+		<key>D1D0CB61-AC7B-4A9D-9189-087C674F43C1</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>note</key>
+			<string>Generate new password</string>
+			<key>xpos</key>
+			<real>265</real>
+			<key>ypos</key>
+			<real>800</real>
+		</dict>
 		<key>DC99D90F-BD3C-4324-8418-3BFCE45D7A8A</key>
 		<dict>
 			<key>colorindex</key>
@@ -3427,7 +3509,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>1540</real>
 			<key>ypos</key>
-			<real>1150</real>
+			<real>1250</real>
 		</dict>
 		<key>DEBCDDB5-A283-4FD7-910C-A94340430B41</key>
 		<dict>
@@ -3479,7 +3561,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>1770</real>
 			<key>ypos</key>
-			<real>1080</real>
+			<real>1180</real>
 		</dict>
 		<key>F6C8B22E-0712-4D9F-B46C-F3080952EF44</key>
 		<dict>
