@@ -61,6 +61,16 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>2E138A4B-05D2-42D7-841F-B992CA392302</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>DC99D90F-BD3C-4324-8418-3BFCE45D7A8A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -139,6 +149,21 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>69762CC0-0EEB-4339-BD19-4E3D2D380C65</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>6753D302-435E-4371-8563-881C80D9E460</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>2E138A4B-05D2-42D7-841F-B992CA392302</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>830F3986-D17B-4CA4-8682-F0A5E286E7BD</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -427,6 +452,18 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>93136645-889B-492E-9C5E-EAB3E7BF6A14</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>FA8EA6D4-3265-4DBB-BC15-200D202F110B</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>72319E72-4950-46FF-B106-36768FEEE072</key>
 		<array>
@@ -567,6 +604,21 @@
 				<string></string>
 				<key>sourceoutputuid</key>
 				<string>82D0EC4B-156B-4AA8-B131-30BF46DC6604</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>93136645-889B-492E-9C5E-EAB3E7BF6A14</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AD96B7F9-DF01-4963-AF1F-0FC3C80B1FCA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>6753D302-435E-4371-8563-881C80D9E460</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -745,6 +797,18 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>F6C8B22E-0712-4D9F-B46C-F3080952EF44</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>DF13AB62-73F6-4D79-8971-7F1D89CB1FB7</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>D06DB843-97B5-4A4E-AFA5-038658D4CF1C</key>
 		<array>
@@ -793,6 +857,18 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>D06DB843-97B5-4A4E-AFA5-038658D4CF1C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>313FFF33-DC3B-40A3-9517-6DDCF29E7FE9</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -2095,6 +2171,20 @@ function run(argument){
 				<array>
 					<dict>
 						<key>inputstring</key>
+						<string>{var:transience_disabled}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>5</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>no transience</string>
+						<key>uid</key>
+						<string>DF13AB62-73F6-4D79-8971-7F1D89CB1FB7</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
 						<string>{var:sensitive}</string>
 						<key>matchcasesensitive</key>
 						<false/>
@@ -2597,6 +2687,38 @@ function run(argument){
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:enable_notifications}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>5</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>enabled</string>
+						<key>uid</key>
+						<string>6753D302-435E-4371-8563-881C80D9E460</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>2E138A4B-05D2-42D7-841F-B992CA392302</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>autopaste</key>
 				<false/>
 				<key>clipboardtext</key>
@@ -2731,6 +2853,20 @@ function run(argument){
 				<array>
 					<dict>
 						<key>inputstring</key>
+						<string>{var:transience_disabled}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>5</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>no transience</string>
+						<key>uid</key>
+						<string>313FFF33-DC3B-40A3-9517-6DDCF29E7FE9</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
 						<string>{var:sensitive}</string>
 						<key>matchcasesensitive</key>
 						<false/>
@@ -2753,6 +2889,59 @@ function run(argument){
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
 			<string>DC99D90F-BD3C-4324-8418-3BFCE45D7A8A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{var:copy_field} copied!</string>
+				<key>title</key>
+				<string>Lastpass Search</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>AD96B7F9-DF01-4963-AF1F-0FC3C80B1FCA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:enable_notifications}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>5</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>enabled</string>
+						<key>uid</key>
+						<string>6753D302-435E-4371-8563-881C80D9E460</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>93136645-889B-492E-9C5E-EAB3E7BF6A14</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2930,6 +3119,15 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>ypos</key>
 			<real>865</real>
 		</dict>
+		<key>2E138A4B-05D2-42D7-841F-B992CA392302</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<real>1610</real>
+			<key>ypos</key>
+			<real>995</real>
+		</dict>
 		<key>30370047-D1BD-4EA2-840D-B385D10659B5</key>
 		<dict>
 			<key>colorindex</key>
@@ -3062,7 +3260,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 		<key>69A30989-4503-443C-B73B-4717E9FF6F21</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>4</integer>
+			<integer>3</integer>
 			<key>xpos</key>
 			<real>565</real>
 			<key>ypos</key>
@@ -3170,7 +3368,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<real>1055</real>
+			<real>1045</real>
 			<key>ypos</key>
 			<real>1045</real>
 		</dict>
@@ -3200,6 +3398,15 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<real>1560</real>
 			<key>ypos</key>
 			<real>610</real>
+		</dict>
+		<key>93136645-889B-492E-9C5E-EAB3E7BF6A14</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<real>600</real>
+			<key>ypos</key>
+			<real>1175</real>
 		</dict>
 		<key>9A34D7BF-153A-4190-ADBA-073F7CEB76A2</key>
 		<dict>
@@ -3254,6 +3461,15 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<real>415</real>
 			<key>ypos</key>
 			<real>515</real>
+		</dict>
+		<key>AD96B7F9-DF01-4963-AF1F-0FC3C80B1FCA</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<real>665</real>
+			<key>ypos</key>
+			<real>1145</real>
 		</dict>
 		<key>B0721EDF-A7CF-4C3D-B473-8555A4E00276</key>
 		<dict>
@@ -3361,7 +3577,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>1540</real>
 			<key>ypos</key>
-			<real>1140</real>
+			<real>1115</real>
 		</dict>
 		<key>DEBCDDB5-A283-4FD7-910C-A94340430B41</key>
 		<dict>
@@ -3660,6 +3876,44 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<string>textfield</string>
 			<key>variable</key>
 			<string>allowed_symbols</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+			</dict>
+			<key>description</key>
+			<string>Use fuzzy mathing/filtering when seaching for entries.</string>
+			<key>label</key>
+			<string>Use Fuzzy Search</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>fuzzy_search</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+			</dict>
+			<key>description</key>
+			<string>⚠️ This is NOT recommended!</string>
+			<key>label</key>
+			<string>Disable Clipboard Transience</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>transience_disabled</string>
 		</dict>
 	</array>
 	<key>variables</key>
