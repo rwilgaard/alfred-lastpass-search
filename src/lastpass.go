@@ -1,10 +1,10 @@
 package main
 
 import (
-    "fmt"
-    "os/exec"
-    "regexp"
-    "strings"
+	"fmt"
+	"os/exec"
+	"regexp"
+	"strings"
 )
 
 type LastpassFolder struct {

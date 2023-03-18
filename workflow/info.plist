@@ -442,7 +442,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>2B9AAC31-7331-40F6-A5EC-D934FE969C81</string>
+				<string>C3316582-690B-4D37-AF89-90E15DC944EB</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -773,6 +773,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>C3316582-690B-4D37-AF89-90E15DC944EB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DC33B20C-79ED-4A47-A318-12E139383819</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>CF7D3A20-8B86-4C4D-AD34-2F7F21965693</key>
 		<array>
 			<dict>
@@ -828,6 +841,31 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>6B91F133-20A8-4C44-AC3A-AF19BEA64F8B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>DC33B20C-79ED-4A47-A318-12E139383819</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2B9AAC31-7331-40F6-A5EC-D934FE969C81</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>313FFF33-DC3B-40A3-9517-6DDCF29E7FE9</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>1EB16C07-A623-4A32-9381-F99272D2BC32</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -2726,7 +2764,7 @@ function run(argument){
 				<key>ignoredynamicplaceholders</key>
 				<false/>
 				<key>transient</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.clipboard</string>
@@ -2781,6 +2819,58 @@ function run(argument){
 			<string>379D9E48-0D93-480F-A5BC-E8D46D3BE677</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:transience_disabled}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>5</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>no transience</string>
+						<key>uid</key>
+						<string>313FFF33-DC3B-40A3-9517-6DDCF29E7FE9</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>DC33B20C-79ED-4A47-A318-12E139383819</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>sensitive</key>
+					<string>true</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>C3316582-690B-4D37-AF89-90E15DC944EB</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2902,7 +2992,7 @@ function run(argument){
 				<key>removeextension</key>
 				<false/>
 				<key>text</key>
-				<string>{var:copy_field} copied!</string>
+				<string>Password copied!</string>
 				<key>title</key>
 				<string>Lastpass Search</string>
 			</dict>
@@ -2912,6 +3002,25 @@ function run(argument){
 			<string>AD96B7F9-DF01-4963-AF1F-0FC3C80B1FCA</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{var:password}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>1EB16C07-A623-4A32-9381-F99272D2BC32</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -3071,6 +3180,15 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<real>655</real>
 			<key>ypos</key>
 			<real>650</real>
+		</dict>
+		<key>1EB16C07-A623-4A32-9381-F99272D2BC32</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<real>665</real>
+			<key>ypos</key>
+			<real>1140</real>
 		</dict>
 		<key>1F8C695C-78C0-4018-96F9-725B55E020CD</key>
 		<dict>
@@ -3404,9 +3522,9 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<real>600</real>
+			<real>470</real>
 			<key>ypos</key>
-			<real>1175</real>
+			<real>1170</real>
 		</dict>
 		<key>9A34D7BF-153A-4190-ADBA-073F7CEB76A2</key>
 		<dict>
@@ -3467,9 +3585,9 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<real>665</real>
+			<real>535</real>
 			<key>ypos</key>
-			<real>1145</real>
+			<real>1140</real>
 		</dict>
 		<key>B0721EDF-A7CF-4C3D-B473-8555A4E00276</key>
 		<dict>
@@ -3525,6 +3643,15 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>ypos</key>
 			<real>925</real>
 		</dict>
+		<key>C3316582-690B-4D37-AF89-90E15DC944EB</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<real>475</real>
+			<key>ypos</key>
+			<real>1060</real>
+		</dict>
 		<key>C55D80BA-A82C-4C56-989F-A1ED6C8B3F29</key>
 		<dict>
 			<key>xpos</key>
@@ -3569,6 +3696,15 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<real>265</real>
 			<key>ypos</key>
 			<real>925</real>
+		</dict>
+		<key>DC33B20C-79ED-4A47-A318-12E139383819</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<real>545</real>
+			<key>ypos</key>
+			<real>1050</real>
 		</dict>
 		<key>DC99D90F-BD3C-4324-8418-3BFCE45D7A8A</key>
 		<dict>
