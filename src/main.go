@@ -21,6 +21,7 @@ type WorkflowConfig struct {
     ModifierOpt    string `env:"modifier_opt"`
     ModifierCtrl   string `env:"modifier_ctrl"`
     AllowedSymbols string `env:"allowed_symbols"`
+    FuzzySearch    bool   `env:"fuzzy_search"`
 }
 
 const (
@@ -158,7 +159,7 @@ func run() {
             Arg("add")
 
         wf.NewItem(pwn).
-            Subtitle(sub + "  •  No symbols").
+            Subtitle(sub+"  •  No symbols").
             Var("password", pwn).
             Arg("copy").
             Valid(true).
@@ -280,6 +281,7 @@ ID: %s`, fullname, os.Getenv("item_id"))
 
         it := wf.NewItem(e.Name).
             Subtitle(fmt.Sprintf("%s  •  ID: %s", e.Folder, e.ID)).
+            Match(fmt.Sprintf("%s %s %s %s", e.ID, e.Folder, e.Name, e.URL)).
             Icon(icon).
             Var("item_id", e.ID).
             Var("item_name", e.Name).
@@ -309,6 +311,10 @@ ID: %s`, fullname, os.Getenv("item_id"))
                 Var("action", cfg.ModifierCmd).
                 Valid(true)
         }
+    }
+
+    if cfg.FuzzySearch {
+        wf.Filter(opts.Query)
     }
 
     if wf.IsEmpty() {

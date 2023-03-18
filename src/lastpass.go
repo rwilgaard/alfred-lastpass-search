@@ -70,10 +70,13 @@ func getEntries(query string, folder string) ([]LastpassEntry, error) {
         username := reSearch(usernameRegex, l)
         password := reSearch(passwordRegex, l)
         e := fmt.Sprintf("%s %s %s %s %s", id, name, folder, url, username)
+        if id == "" {
+            continue
+        }
         if url == "http://group" {
             continue
         }
-        if !hasAll(strings.ToLower(e), strings.Split(strings.ToLower(query), " ")) {
+        if !hasAll(strings.ToLower(e), strings.Split(strings.ToLower(query), " ")) && !cfg.FuzzySearch {
             continue
         }
         entries = append(entries, LastpassEntry{
