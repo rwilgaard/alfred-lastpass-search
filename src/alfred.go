@@ -121,9 +121,18 @@ func runDetails() {
         "license key", "rootkey", "unsealkey",
     }
 
+    fullname := fmt.Sprintf("%s/%s", os.Getenv("item_folder"), os.Getenv("item_name"))
+
     wf.NewItem("Go back").
         Icon(iconBack).
         Arg("go_back").
+        Valid(true)
+
+    wf.NewItem("Name").
+        Icon(getIcon("name")).
+        Subtitle(fullname).
+        Arg(fullname).
+        Var("sensitive", "false").
         Valid(true)
 
     for _, key := range keys {
@@ -158,14 +167,6 @@ func runDetails() {
             Valid(true)
     }
 
-    fullname := fmt.Sprintf("%s/%s", os.Getenv("item_folder"), os.Getenv("item_name"))
-
-    wf.NewItem("Name").
-        Subtitle(fullname).
-        Arg(fullname).
-        Var("sensitive", "false").
-        Valid(true)
-
     wf.NewItem("Edit entry").
         Icon(iconEdit).
         Arg("edit").
@@ -180,5 +181,4 @@ ID: %s`, fullname, os.Getenv("item_id"))
         Arg("delete").
         Var("msg", deleteMsg).
         Valid(true)
-
 }
