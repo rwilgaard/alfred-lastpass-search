@@ -4058,7 +4058,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 		<string>/bin:/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/opt/homebrew/bin/</string>
 	</dict>
 	<key>version</key>
-	<string>1.4.0</string>
+	<string>1.5.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/rwilgaard/alfred-lastpass-search.git</string>
 </dict>
