@@ -7,6 +7,12 @@ The easiest way to install the LastPass CLI is using [Homebrew](https://brew.sh/
 brew install lastpass-cli
 ```
 
+## Installation
+* [Download the latest release](https://github.com/rwilgaard/alfred-lastpass-search/releases)
+* Open the downloaded file in Finder.
+* Make sure the [LastPass CLI](https://github.com/lastpass/lastpass-cli) is installed.
+* If running on macOS Catalina or later, you _**MUST**_ add Alfred to the list of security exceptions for running unsigned software. See [this guide](https://github.com/deanishe/awgo/wiki/Catalina) for instructions on how to do this.
+
 ## Features
 * Search for entries
 * Edit existing entries
