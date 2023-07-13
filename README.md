@@ -23,6 +23,7 @@ brew install lastpass-cli
 ## Keywords
 
 * `lp` search for entries in the entire LastPass vault. A hotkey can be configured for this keyword.
+* `lpf` search for entries in a specific folder. A hotkey can be configured for this keyword.
 * `lpp` search for entries only in specified private folders. The private folders can be configured in the **User Configuration**. A hotkey can be configured for this keyword.
 * `lpadd` add new entry to LastPass.
 * `lpgen` generate a new random password and copy it to the clipboard or add it directly to LastPass. The default length is 32 characters, but you can also specify the length after `lpgen`.
@@ -33,7 +34,7 @@ brew install lastpass-cli
 All the mappings below can be changed in the **User Configuration**.
 
 #### Default mappings
-The following actions can be used on entries returned from the `lp` & `lpp` keywords:
+The following actions can be used on entries returned from the `lp`, `lpf` & `lpp` keywords:
 * `↩` will copy the password to the clipboard.
 * `⌘` + `↩` will show details for the entry.
 * `⌥` + `↩` will copy the username to the clipboard.

@@ -58,6 +58,9 @@ func runListFolders() {
 
 func runSearch() {
     var entries []LastpassEntry
+    if opts.Folders != "" {
+        wf.Configure(aw.MaxResults(0))
+    }
     for _, folder := range strings.Split(opts.Folders, ",") {
         l, err := getEntries(opts.Query, strings.TrimSpace(folder))
         if err != nil {

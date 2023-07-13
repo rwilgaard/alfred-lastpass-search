@@ -636,6 +636,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>9CF97F9F-6DBC-40F2-959E-655CA027CB4F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EAFF798E-240D-419C-8C88-90011AE5E4C7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>A0E6C648-CB13-4E03-8265-E94BEDD04F88</key>
 		<array>
 			<dict>
@@ -916,6 +929,32 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>84DA8248-BB6E-43D9-9943-907BADB26CC9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>EAFF798E-240D-419C-8C88-90011AE5E4C7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8EE3D608-1415-4C4B-9228-1F58F40597FC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>EF87A5DA-65E9-4107-A1D9-0F53AB75F14D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9CF97F9F-6DBC-40F2-959E-655CA027CB4F</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1718,6 +1757,190 @@ function run(argument){
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>2</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Searching for entries in Lastpass...</string>
+				<key>script</key>
+				<string>./alfred-lastpass-search -folders "${folder}" "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Search for entries in Lastpass</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>EAFF798E-240D-419C-8C88-90011AE5E4C7</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>2</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>lpf</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Fetching folders...</string>
+				<key>script</key>
+				<string>./alfred-lastpass-search -listfolders "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Select folder</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>9CF97F9F-6DBC-40F2-959E-655CA027CB4F</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>EF87A5DA-65E9-4107-A1D9-0F53AB75F14D</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>search</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<false/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>6E942A82-3E57-4C5E-B80B-F88DE1CF45BF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{var:query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>30370047-D1BD-4EA2-840D-B385D10659B5</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{var:field} copied to clipboard</string>
+				<key>title</key>
+				<string>Lastpass Search</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>5EFB09F2-7BB4-487B-9E3A-2A391975603B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -1789,19 +2012,32 @@ lpass sync now</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>externaltriggerid</key>
-				<string>search</string>
-				<key>passinputasargument</key>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:enable_notifications}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>5</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>enabled</string>
+						<key>uid</key>
+						<string>6753D302-435E-4371-8563-881C80D9E460</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
 				<true/>
-				<key>passvariables</key>
-				<false/>
-				<key>workflowbundleid</key>
-				<string>self</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
+			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
-			<string>6E942A82-3E57-4C5E-B80B-F88DE1CF45BF</string>
+			<string>B1B264E5-0737-464C-8B96-275F99775B40</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1886,40 +2122,21 @@ lpass sync now</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>{var:query}</string>
-				<key>passthroughargument</key>
+				<key>autopaste</key>
 				<false/>
-				<key>variables</key>
-				<dict/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>30370047-D1BD-4EA2-840D-B385D10659B5</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
 				<false/>
-				<key>onlyshowifquerypopulated</key>
+				<key>transient</key>
 				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{var:field} copied to clipboard</string>
-				<key>title</key>
-				<string>Lastpass Search</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
+			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
-			<string>5EFB09F2-7BB4-487B-9E3A-2A391975603B</string>
+			<string>91DE80F1-34FB-47FC-89C4-CC4A4114A36B</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1993,7 +2210,7 @@ lpass sync now</string>
 				<array>
 					<dict>
 						<key>inputstring</key>
-						<string>{var:enable_notifications}</string>
+						<string>{var:transience_disabled}</string>
 						<key>matchcasesensitive</key>
 						<false/>
 						<key>matchmode</key>
@@ -2001,20 +2218,34 @@ lpass sync now</string>
 						<key>matchstring</key>
 						<string></string>
 						<key>outputlabel</key>
-						<string>enabled</string>
+						<string>no transience</string>
 						<key>uid</key>
-						<string>6753D302-435E-4371-8563-881C80D9E460</string>
+						<string>DF13AB62-73F6-4D79-8971-7F1D89CB1FB7</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:sensitive}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>true</string>
+						<key>outputlabel</key>
+						<string>sensitive</string>
+						<key>uid</key>
+						<string>3D4ACD4F-619E-4FA9-81BB-042C74049178</string>
 					</dict>
 				</array>
 				<key>elselabel</key>
 				<string>else</string>
 				<key>hideelse</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
-			<string>B1B264E5-0737-464C-8B96-275F99775B40</string>
+			<string>CF7D3A20-8B86-4C4D-AD34-2F7F21965693</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2060,12 +2291,12 @@ lpass sync now</string>
 				<key>ignoredynamicplaceholders</key>
 				<false/>
 				<key>transient</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
-			<string>91DE80F1-34FB-47FC-89C4-CC4A4114A36B</string>
+			<string>F6C8B22E-0712-4D9F-B46C-F3080952EF44</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
@@ -2106,6 +2337,27 @@ lpass sync now</string>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>F531720E-CB90-47BA-8DD6-A80837132FFA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>button1</key>
+				<string>Delete</string>
+				<key>button2</key>
+				<string>Cancel</string>
+				<key>button3</key>
+				<string></string>
+				<key>description</key>
+				<string>{var:msg}</string>
+				<key>title</key>
+				<string>Delete {var:item_name}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.dialog</string>
+			<key>uid</key>
+			<string>A782A61A-A32D-4D42-8EC5-DF2B5F8DE2BE</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -2206,111 +2458,6 @@ lpass sync now</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string>{var:transience_disabled}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>5</integer>
-						<key>matchstring</key>
-						<string></string>
-						<key>outputlabel</key>
-						<string>no transience</string>
-						<key>uid</key>
-						<string>DF13AB62-73F6-4D79-8971-7F1D89CB1FB7</string>
-					</dict>
-					<dict>
-						<key>inputstring</key>
-						<string>{var:sensitive}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
-						<string>true</string>
-						<key>outputlabel</key>
-						<string>sensitive</string>
-						<key>uid</key>
-						<string>3D4ACD4F-619E-4FA9-81BB-042C74049178</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>else</string>
-				<key>hideelse</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>CF7D3A20-8B86-4C4D-AD34-2F7F21965693</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>F6C8B22E-0712-4D9F-B46C-F3080952EF44</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>externaltriggerid</key>
-				<string>login</string>
-				<key>passinputasargument</key>
-				<false/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>self</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>3FAB77D2-D856-470E-9A38-1B6AFADC55E7</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>button1</key>
-				<string>Delete</string>
-				<key>button2</key>
-				<string>Cancel</string>
-				<key>button3</key>
-				<string></string>
-				<key>description</key>
-				<string>{var:msg}</string>
-				<key>title</key>
-				<string>Delete {var:item_name}</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.dialog</string>
-			<key>uid</key>
-			<string>A782A61A-A32D-4D42-8EC5-DF2B5F8DE2BE</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -2383,6 +2530,125 @@ lpass sync now</string>
 			<string>2BC67259-5B0E-4067-8111-E104CAEEE727</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>login</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>3FAB77D2-D856-470E-9A38-1B6AFADC55E7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>69</integer>
+				<key>script</key>
+				<string>lpass show --sync=no --${copy_field} "${item_id}"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>inboundconfig</key>
+			<dict>
+				<key>externalid</key>
+				<string>copy</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>172B3702-3EEC-4FE2-A49A-BACF5323514A</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{var:copy_field} copied!</string>
+				<key>title</key>
+				<string>Lastpass Search</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>830F3986-D17B-4CA4-8682-F0A5E286E7BD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:enable_notifications}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>5</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>enabled</string>
+						<key>uid</key>
+						<string>6753D302-435E-4371-8563-881C80D9E460</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>2E138A4B-05D2-42D7-841F-B992CA392302</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>F626AE57-1EBB-439B-8E97-C23BE9BEC97D</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2600,6 +2866,19 @@ lpass sync now</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.transform</string>
+			<key>uid</key>
+			<string>72DA6669-FB83-4C5C-8D0C-2AF705A56B2E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argument</key>
 				<string></string>
 				<key>passthroughargument</key>
@@ -2677,60 +2956,11 @@ lpass sync now</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>69</integer>
-				<key>script</key>
-				<string>lpass show --sync=no --${copy_field} "${item_id}"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>inboundconfig</key>
-			<dict>
-				<key>externalid</key>
-				<string>copy</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>172B3702-3EEC-4FE2-A49A-BACF5323514A</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{var:copy_field} copied!</string>
-				<key>title</key>
-				<string>Lastpass Search</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>830F3986-D17B-4CA4-8682-F0A5E286E7BD</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
 						<key>inputstring</key>
-						<string>{var:enable_notifications}</string>
+						<string>{var:transience_disabled}</string>
 						<key>matchcasesensitive</key>
 						<false/>
 						<key>matchmode</key>
@@ -2738,22 +2968,55 @@ lpass sync now</string>
 						<key>matchstring</key>
 						<string></string>
 						<key>outputlabel</key>
-						<string>enabled</string>
+						<string>no transience</string>
 						<key>uid</key>
-						<string>6753D302-435E-4371-8563-881C80D9E460</string>
+						<string>313FFF33-DC3B-40A3-9517-6DDCF29E7FE9</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:sensitive}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>true</string>
+						<key>outputlabel</key>
+						<string>sensitive</string>
+						<key>uid</key>
+						<string>3D4ACD4F-619E-4FA9-81BB-042C74049178</string>
 					</dict>
 				</array>
 				<key>elselabel</key>
 				<string>else</string>
 				<key>hideelse</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
-			<string>2E138A4B-05D2-42D7-841F-B992CA392302</string>
+			<string>DC99D90F-BD3C-4324-8418-3BFCE45D7A8A</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>A7702042-B418-474D-9229-2D9A6F9AA719</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2856,6 +3119,19 @@ lpass sync now</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.transform</string>
+			<key>uid</key>
+			<string>D06DB843-97B5-4A4E-AFA5-038658D4CF1C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argument</key>
 				<string></string>
 				<key>passthroughargument</key>
@@ -2872,25 +3148,6 @@ lpass sync now</string>
 			<string>C3316582-690B-4D37-AF89-90E15DC944EB</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>F626AE57-1EBB-439B-8E97-C23BE9BEC97D</string>
-			<key>version</key>
-			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2921,65 +3178,6 @@ lpass sync now</string>
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
 			<string>472FF19D-3AC6-450D-81AF-3C7631548352</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.transform</string>
-			<key>uid</key>
-			<string>72DA6669-FB83-4C5C-8D0C-2AF705A56B2E</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string>{var:transience_disabled}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>5</integer>
-						<key>matchstring</key>
-						<string></string>
-						<key>outputlabel</key>
-						<string>no transience</string>
-						<key>uid</key>
-						<string>313FFF33-DC3B-40A3-9517-6DDCF29E7FE9</string>
-					</dict>
-					<dict>
-						<key>inputstring</key>
-						<string>{var:sensitive}</string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>0</integer>
-						<key>matchstring</key>
-						<string>true</string>
-						<key>outputlabel</key>
-						<string>sensitive</string>
-						<key>uid</key>
-						<string>3D4ACD4F-619E-4FA9-81BB-042C74049178</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>else</string>
-				<key>hideelse</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>DC99D90F-BD3C-4324-8418-3BFCE45D7A8A</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -3055,38 +3253,6 @@ lpass sync now</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>A7702042-B418-474D-9229-2D9A6F9AA719</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.transform</string>
-			<key>uid</key>
-			<string>D06DB843-97B5-4A4E-AFA5-038658D4CF1C</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string># LastPass Search
@@ -3107,6 +3273,7 @@ The easiest way to install the LastPass CLI is using [Homebrew](https://brew.sh/
 ## Keywords
 
 * `lp` search for entries in the entire LastPass vault. A hotkey can be configured for this keyword.
+* `lpf` search for entries in a specific folder. A hotkey can be configured for this keyword.
 * `lpp` search for entries only in specified private folders. The private folders can be configured in the **User Configuration**. A hotkey can be configured for this keyword.
 * `lpadd` add new entry to LastPass.
 * `lpgen` generate a new random password and copy it to the clipboard or add it directly to LastPass. The default length is 32 characters, but you can also specify the length after `lpgen`.
@@ -3117,7 +3284,7 @@ The easiest way to install the LastPass CLI is using [Homebrew](https://brew.sh/
 All the mappings below can be changed in the **User Configuration**.
 
 #### Default mappings
-The following actions can be used on entries returned from the `lp` &amp; `lpp` keywords:
+The following actions can be used on entries returned from the `lp`, `lpf` &amp; `lpp` keywords:
 * `↩` will copy the password to the clipboard.
 * `⌘` + `↩` will show details for the entry.
 * `⌥` + `↩` will copy the username to the clipboard.
@@ -3151,7 +3318,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>1045</real>
 			<key>ypos</key>
-			<real>925</real>
+			<real>1075</real>
 		</dict>
 		<key>15181D10-2312-4C57-AC32-C434A853F605</key>
 		<dict>
@@ -3160,7 +3327,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>655</real>
 			<key>ypos</key>
-			<real>365</real>
+			<real>515</real>
 		</dict>
 		<key>172B3702-3EEC-4FE2-A49A-BACF5323514A</key>
 		<dict>
@@ -3180,7 +3347,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>655</real>
 			<key>ypos</key>
-			<real>650</real>
+			<real>800</real>
 		</dict>
 		<key>1EB16C07-A623-4A32-9381-F99272D2BC32</key>
 		<dict>
@@ -3189,7 +3356,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>665</real>
 			<key>ypos</key>
-			<real>1140</real>
+			<real>1290</real>
 		</dict>
 		<key>1F8C695C-78C0-4018-96F9-725B55E020CD</key>
 		<dict>
@@ -3218,7 +3385,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>475</real>
 			<key>ypos</key>
-			<real>955</real>
+			<real>1105</real>
 		</dict>
 		<key>2B9AAC31-7331-40F6-A5EC-D934FE969C81</key>
 		<dict>
@@ -3227,7 +3394,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>665</real>
 			<key>ypos</key>
-			<real>1035</real>
+			<real>1185</real>
 		</dict>
 		<key>2BC67259-5B0E-4067-8111-E104CAEEE727</key>
 		<dict>
@@ -3263,7 +3430,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>1255</real>
 			<key>ypos</key>
-			<real>415</real>
+			<real>565</real>
 		</dict>
 		<key>33E8DC82-8172-4C0F-B741-1BE2A45A68AF</key>
 		<dict>
@@ -3279,14 +3446,14 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>860</real>
 			<key>ypos</key>
-			<real>1045</real>
+			<real>1195</real>
 		</dict>
 		<key>3FAB77D2-D856-470E-9A38-1B6AFADC55E7</key>
 		<dict>
 			<key>xpos</key>
 			<real>660</real>
 			<key>ypos</key>
-			<real>790</real>
+			<real>940</real>
 		</dict>
 		<key>42B18ADC-3489-47B4-8919-0F683EB432E2</key>
 		<dict>
@@ -3295,7 +3462,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>1180</real>
 			<key>ypos</key>
-			<real>955</real>
+			<real>1105</real>
 		</dict>
 		<key>472FF19D-3AC6-450D-81AF-3C7631548352</key>
 		<dict>
@@ -3304,7 +3471,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>995</real>
 			<key>ypos</key>
-			<real>1075</real>
+			<real>1225</real>
 		</dict>
 		<key>4DAC7A29-A580-450C-95CD-269C4C683147</key>
 		<dict>
@@ -3347,7 +3514,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>995</real>
 			<key>ypos</key>
-			<real>955</real>
+			<real>1105</real>
 		</dict>
 		<key>5EFB09F2-7BB4-487B-9E3A-2A391975603B</key>
 		<dict>
@@ -3365,7 +3532,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>575</real>
 			<key>ypos</key>
-			<real>545</real>
+			<real>695</real>
 		</dict>
 		<key>69762CC0-0EEB-4339-BD19-4E3D2D380C65</key>
 		<dict>
@@ -3383,7 +3550,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>565</real>
 			<key>ypos</key>
-			<real>670</real>
+			<real>820</real>
 		</dict>
 		<key>6B303D76-B17A-4266-AFEA-E0FB7C4092F7</key>
 		<dict>
@@ -3408,7 +3575,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>405</real>
 			<key>ypos</key>
-			<real>930</real>
+			<real>1080</real>
 		</dict>
 		<key>6E942A82-3E57-4C5E-B80B-F88DE1CF45BF</key>
 		<dict>
@@ -3426,7 +3593,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>800</real>
 			<key>ypos</key>
-			<real>955</real>
+			<real>1105</real>
 		</dict>
 		<key>72DA6669-FB83-4C5C-8D0C-2AF705A56B2E</key>
 		<dict>
@@ -3462,7 +3629,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>575</real>
 			<key>ypos</key>
-			<real>395</real>
+			<real>545</real>
 		</dict>
 		<key>873171FB-CDB9-4EDF-8FBE-A6CE375C5B2C</key>
 		<dict>
@@ -3471,7 +3638,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>855</real>
 			<key>ypos</key>
-			<real>925</real>
+			<real>1075</real>
 		</dict>
 		<key>88F5BE75-238B-4137-9914-5158FF83A716</key>
 		<dict>
@@ -3480,7 +3647,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>655</real>
 			<key>ypos</key>
-			<real>515</real>
+			<real>665</real>
 		</dict>
 		<key>8B393C58-48CE-4582-8A0D-30B4303872DF</key>
 		<dict>
@@ -3489,7 +3656,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>1045</real>
 			<key>ypos</key>
-			<real>1045</real>
+			<real>1195</real>
 		</dict>
 		<key>8DFF1A5A-133F-46E8-BF67-F2E8708D6B0D</key>
 		<dict>
@@ -3500,7 +3667,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>265</real>
 			<key>ypos</key>
-			<real>515</real>
+			<real>665</real>
 		</dict>
 		<key>8EE3D608-1415-4C4B-9228-1F58F40597FC</key>
 		<dict>
@@ -3525,7 +3692,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>470</real>
 			<key>ypos</key>
-			<real>1170</real>
+			<real>1320</real>
 		</dict>
 		<key>9A34D7BF-153A-4190-ADBA-073F7CEB76A2</key>
 		<dict>
@@ -3536,6 +3703,15 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>ypos</key>
 			<real>215</real>
 		</dict>
+		<key>9CF97F9F-6DBC-40F2-959E-655CA027CB4F</key>
+		<dict>
+			<key>note</key>
+			<string>Search for entries in folder</string>
+			<key>xpos</key>
+			<real>265</real>
+			<key>ypos</key>
+			<real>365</real>
+		</dict>
 		<key>A0E6C648-CB13-4E03-8265-E94BEDD04F88</key>
 		<dict>
 			<key>colorindex</key>
@@ -3543,7 +3719,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>415</real>
 			<key>ypos</key>
-			<real>650</real>
+			<real>800</real>
 		</dict>
 		<key>A21D01DA-5DEA-4635-A690-A80C274461F0</key>
 		<dict>
@@ -3552,7 +3728,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>665</real>
 			<key>ypos</key>
-			<real>925</real>
+			<real>1075</real>
 		</dict>
 		<key>A7702042-B418-474D-9229-2D9A6F9AA719</key>
 		<dict>
@@ -3579,7 +3755,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>415</real>
 			<key>ypos</key>
-			<real>515</real>
+			<real>665</real>
 		</dict>
 		<key>AD96B7F9-DF01-4963-AF1F-0FC3C80B1FCA</key>
 		<dict>
@@ -3588,7 +3764,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>535</real>
 			<key>ypos</key>
-			<real>1140</real>
+			<real>1290</real>
 		</dict>
 		<key>B0721EDF-A7CF-4C3D-B473-8555A4E00276</key>
 		<dict>
@@ -3617,7 +3793,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>265</real>
 			<key>ypos</key>
-			<real>365</real>
+			<real>515</real>
 		</dict>
 		<key>B479C708-48E4-411D-8A23-7DA4F52B1AB4</key>
 		<dict>
@@ -3626,7 +3802,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>815</real>
 			<key>ypos</key>
-			<real>650</real>
+			<real>800</real>
 		</dict>
 		<key>B4AD0C00-95F9-4053-84A4-A98C00313EAE</key>
 		<dict>
@@ -3642,7 +3818,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>535</real>
 			<key>ypos</key>
-			<real>925</real>
+			<real>1075</real>
 		</dict>
 		<key>C3316582-690B-4D37-AF89-90E15DC944EB</key>
 		<dict>
@@ -3651,7 +3827,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>475</real>
 			<key>ypos</key>
-			<real>1060</real>
+			<real>1210</real>
 		</dict>
 		<key>C55D80BA-A82C-4C56-989F-A1ED6C8B3F29</key>
 		<dict>
@@ -3696,7 +3872,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>265</real>
 			<key>ypos</key>
-			<real>925</real>
+			<real>1075</real>
 		</dict>
 		<key>DC33B20C-79ED-4A47-A318-12E139383819</key>
 		<dict>
@@ -3705,7 +3881,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>545</real>
 			<key>ypos</key>
-			<real>1050</real>
+			<real>1200</real>
 		</dict>
 		<key>DC99D90F-BD3C-4324-8418-3BFCE45D7A8A</key>
 		<dict>
@@ -3723,7 +3899,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>415</real>
 			<key>ypos</key>
-			<real>365</real>
+			<real>515</real>
 		</dict>
 		<key>E296F757-AF4A-48F3-B572-05B548A3E009</key>
 		<dict>
@@ -3741,6 +3917,20 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>ypos</key>
 			<real>135</real>
 		</dict>
+		<key>EAFF798E-240D-419C-8C88-90011AE5E4C7</key>
+		<dict>
+			<key>xpos</key>
+			<real>415</real>
+			<key>ypos</key>
+			<real>365</real>
+		</dict>
+		<key>EF87A5DA-65E9-4107-A1D9-0F53AB75F14D</key>
+		<dict>
+			<key>xpos</key>
+			<real>120</real>
+			<key>ypos</key>
+			<real>365</real>
+		</dict>
 		<key>F516F95A-574D-4A79-9DB8-535B0D46F56F</key>
 		<dict>
 			<key>xpos</key>
@@ -3757,7 +3947,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 			<key>xpos</key>
 			<real>265</real>
 			<key>ypos</key>
-			<real>650</real>
+			<real>800</real>
 		</dict>
 		<key>F626AE57-1EBB-439B-8E97-C23BE9BEC97D</key>
 		<dict>
@@ -4059,7 +4249,7 @@ The following actions can be used on entries returned from the `lp` &amp; `lpp` 
 		<string>/bin:/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/opt/homebrew/bin/</string>
 	</dict>
 	<key>version</key>
-	<string>1.5.1</string>
+	<string>1.6.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/rwilgaard/alfred-lastpass-search.git</string>
 </dict>
