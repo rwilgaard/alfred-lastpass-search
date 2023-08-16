@@ -1,25 +1,26 @@
 package main
 
 import (
-	"log"
-	"os"
-	"os/exec"
-	"regexp"
-	"strings"
+    "log"
+    "os"
+    "os/exec"
+    "regexp"
+    "strings"
 
-	aw "github.com/deanishe/awgo"
-	"github.com/deanishe/awgo/update"
-	"github.com/sethvargo/go-password/password"
+    aw "github.com/deanishe/awgo"
+    "github.com/deanishe/awgo/update"
+    "github.com/sethvargo/go-password/password"
 )
 
 type WorkflowConfig struct {
-    LpassBin       string
-    ModifierReturn string `env:"modifier_return"`
-    ModifierCmd    string `env:"modifier_cmd"`
-    ModifierOpt    string `env:"modifier_opt"`
-    ModifierCtrl   string `env:"modifier_ctrl"`
-    AllowedSymbols string `env:"allowed_symbols"`
-    FuzzySearch    bool   `env:"fuzzy_search"`
+    LpassBin            string
+    ModifierReturn      string `env:"modifier_return"`
+    ModifierCmd         string `env:"modifier_cmd"`
+    ModifierOpt         string `env:"modifier_opt"`
+    ModifierCtrl        string `env:"modifier_ctrl"`
+    AllowedSymbols      string `env:"allowed_symbols"`
+    FuzzySearch         bool   `env:"fuzzy_search"`
+    IntelligentOrdering bool   `env:"intelligent_ordering"`
 }
 
 const (

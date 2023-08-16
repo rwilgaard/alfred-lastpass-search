@@ -222,6 +222,16 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>D19CFE58-9C74-41F3-A36F-16A29A2A40D9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>42B18ADC-3489-47B4-8919-0F683EB432E2</key>
 		<array>
@@ -414,6 +424,8 @@
 				<false/>
 			</dict>
 		</array>
+		<key>6B62A320-E52A-4505-8A1C-6C42BDF7F840</key>
+		<array/>
 		<key>6B91F133-20A8-4C44-AC3A-AF19BEA64F8B</key>
 		<array>
 			<dict>
@@ -759,7 +771,18 @@
 			</dict>
 		</array>
 		<key>B479C708-48E4-411D-8A23-7DA4F52B1AB4</key>
-		<array/>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2E01E4F1-12FD-4506-AF3E-94A53C95D95D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>B4AD0C00-95F9-4053-84A4-A98C00313EAE</key>
 		<array>
 			<dict>
@@ -1988,8 +2011,8 @@ function run(argument){
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>lpass ls --sync=now 1&gt; /dev/null &amp;&amp; echo "Sync completed" || echo "Sync error!"
-lpass sync now</string>
+				<string>lpass ls --sync=now 1&gt; /dev/null
+lpass sync now &amp;&amp; echo "Sync completed" || echo "Sync error!"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -2373,6 +2396,25 @@ lpass sync now</string>
 			<string>alfred.workflow.action.terminalcommand</string>
 			<key>uid</key>
 			<string>B479C708-48E4-411D-8A23-7DA4F52B1AB4</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>lpsync</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<false/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>2E01E4F1-12FD-4506-AF3E-94A53C95D95D</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -3224,6 +3266,25 @@ lpass sync now</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>externaltriggerid</key>
+				<string>lpsync</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<false/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>D19CFE58-9C74-41F3-A36F-16A29A2A40D9</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -3404,6 +3465,15 @@ The following actions can be used on entries returned from the `lp`, `lpf` &amp;
 			<real>1705</real>
 			<key>ypos</key>
 			<real>865</real>
+		</dict>
+		<key>2E01E4F1-12FD-4506-AF3E-94A53C95D95D</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>xpos</key>
+			<real>955</real>
+			<key>ypos</key>
+			<real>800</real>
 		</dict>
 		<key>2E138A4B-05D2-42D7-841F-B992CA392302</key>
 		<dict>
@@ -3863,6 +3933,15 @@ The following actions can be used on entries returned from the `lp`, `lpf` &amp;
 			<key>ypos</key>
 			<real>15</real>
 		</dict>
+		<key>D19CFE58-9C74-41F3-A36F-16A29A2A40D9</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<real>1045</real>
+			<key>ypos</key>
+			<real>1300</real>
+		</dict>
 		<key>DC328262-C685-4CA0-AC71-7BE8251851CD</key>
 		<dict>
 			<key>colorindex</key>
@@ -4234,6 +4313,25 @@ The following actions can be used on entries returned from the `lp`, `lpf` &amp;
 				<string></string>
 			</dict>
 			<key>description</key>
+			<string>This will order your search results based on your past behaviour.</string>
+			<key>label</key>
+			<string>Intelligent ordering</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>intelligent_ordering</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string></string>
+			</dict>
+			<key>description</key>
 			<string>⚠️ This is NOT recommended!</string>
 			<key>label</key>
 			<string>Disable Clipboard Transience</string>
@@ -4249,7 +4347,7 @@ The following actions can be used on entries returned from the `lp`, `lpf` &amp;
 		<string>/bin:/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/opt/homebrew/bin/</string>
 	</dict>
 	<key>version</key>
-	<string>1.6.0</string>
+	<string>1.7.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/rwilgaard/alfred-lastpass-search.git</string>
 </dict>

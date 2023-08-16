@@ -1,12 +1,12 @@
 package main
 
 import (
-	"fmt"
-	"os"
-	"strings"
+    "fmt"
+    "os"
+    "strings"
 
-	aw "github.com/deanishe/awgo"
-	"golang.org/x/exp/slices"
+    aw "github.com/deanishe/awgo"
+    "golang.org/x/exp/slices"
 )
 
 func runGenerate() {
@@ -43,6 +43,10 @@ func runListFolders() {
         wf.FatalError(err)
     }
 
+    if cfg.IntelligentOrdering {
+        wf.Configure(aw.SuppressUIDs(false))
+    }
+
     wf.NewItem("Select folder").
         Match("*").
         Subtitle("Type to search").
@@ -50,6 +54,7 @@ func runListFolders() {
 
     for _, f := range folders {
         wf.NewItem(f.Name).
+            UID(f.Name).
             Icon(iconFolder).
             Var("folder", f.Name).
             Valid(true)
@@ -61,6 +66,11 @@ func runSearch() {
     if opts.Folders != "" {
         wf.Configure(aw.MaxResults(0))
     }
+
+    if cfg.IntelligentOrdering {
+        wf.Configure(aw.SuppressUIDs(false))
+    }
+
     for _, folder := range strings.Split(opts.Folders, ",") {
         l, err := getEntries(opts.Query, strings.TrimSpace(folder))
         if err != nil {
@@ -78,6 +88,7 @@ func runSearch() {
             Subtitle(fmt.Sprintf("%s  •  ID: %s", e.Folder, e.ID)).
             Match(fmt.Sprintf("%s %s %s %s", e.ID, e.Folder, e.Name, e.URL)).
             Icon(icon).
+            UID(e.ID).
             Var("item_id", e.ID).
             Var("item_name", e.Name).
             Var("item_url", e.URL).
