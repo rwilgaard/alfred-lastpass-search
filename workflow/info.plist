@@ -1177,7 +1177,7 @@
 				<key>runningsubtext</key>
 				<string>Searching for entries in Lastpass...</string>
 				<key>script</key>
-				<string>./alfred-lastpass-search "$1"</string>
+				<string>./alfred-lastpass-search list "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -1215,11 +1215,11 @@
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>37</integer>
+				<integer>0</integer>
 				<key>hotmod</key>
-				<integer>1179648</integer>
+				<integer>0</integer>
 				<key>hotstring</key>
-				<string>L</string>
+				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -1469,7 +1469,7 @@
 				<key>runningsubtext</key>
 				<string>Searching for entries in Lastpass...</string>
 				<key>script</key>
-				<string>./alfred-lastpass-search -folders "${private_folders}" "$1"</string>
+				<string>./alfred-lastpass-search list --folders "${private_folders}" "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -1640,7 +1640,7 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>./alfred-lastpass-search -details "$item_id"</string>
+				<string>./alfred-lastpass-search show "$item_id"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -1803,7 +1803,7 @@ function run(argument){
 				<key>runningsubtext</key>
 				<string>Searching for entries in Lastpass...</string>
 				<key>script</key>
-				<string>./alfred-lastpass-search -folders "${folder}" "$1"</string>
+				<string>./alfred-lastpass-search list --folders "${folder}" "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -1852,7 +1852,7 @@ function run(argument){
 				<key>runningsubtext</key>
 				<string>Fetching folders...</string>
 				<key>script</key>
-				<string>./alfred-lastpass-search -listfolders "$1"</string>
+				<string>./alfred-lastpass-search folders "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -2444,7 +2444,7 @@ lpass sync now &amp;&amp; echo "Sync completed" || echo "Sync error!"</string>
 				<key>runningsubtext</key>
 				<string>Fetching folders...</string>
 				<key>script</key>
-				<string>./alfred-lastpass-search -listfolders "$1"</string>
+				<string>./alfred-lastpass-search folders "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -2718,7 +2718,7 @@ lpass sync now &amp;&amp; echo "Sync completed" || echo "Sync error!"</string>
 				<key>runningsubtext</key>
 				<string>Fetching folders...</string>
 				<key>script</key>
-				<string>./alfred-lastpass-search -listfolders "$1"</string>
+				<string>./alfred-lastpass-search folders "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -2824,7 +2824,7 @@ lpass sync now &amp;&amp; echo "Sync completed" || echo "Sync error!"</string>
 				<key>runningsubtext</key>
 				<string>Generating...</string>
 				<key>script</key>
-				<string>./alfred-lastpass-search -generate -name "test" -length "${1:-32}"</string>
+				<string>./alfred-lastpass-search generate --length "${1:-32}"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -3063,25 +3063,6 @@ lpass sync now &amp;&amp; echo "Sync completed" || echo "Sync error!"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{var:password}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>2B9AAC31-7331-40F6-A5EC-D934FE969C81</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -3099,6 +3080,25 @@ lpass sync now &amp;&amp; echo "Sync completed" || echo "Sync error!"</string>
 			<string>8B393C58-48CE-4582-8A0D-30B4303872DF</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{var:password}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>2B9AAC31-7331-40F6-A5EC-D934FE969C81</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -3174,26 +3174,6 @@ lpass sync now &amp;&amp; echo "Sync completed" || echo "Sync error!"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>sensitive</key>
-					<string>true</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>C3316582-690B-4D37-AF89-90E15DC944EB</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>conditions</key>
 				<array>
 					<dict>
@@ -3226,6 +3206,26 @@ lpass sync now &amp;&amp; echo "Sync completed" || echo "Sync error!"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>sensitive</key>
+					<string>true</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>C3316582-690B-4D37-AF89-90E15DC944EB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -3247,25 +3247,6 @@ lpass sync now &amp;&amp; echo "Sync completed" || echo "Sync error!"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{var:password}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>1EB16C07-A623-4A32-9381-F99272D2BC32</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>externaltriggerid</key>
 				<string>lpsync</string>
 				<key>passinputasargument</key>
@@ -3281,6 +3262,25 @@ lpass sync now &amp;&amp; echo "Sync completed" || echo "Sync error!"</string>
 			<string>D19CFE58-9C74-41F3-A36F-16A29A2A40D9</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{var:password}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>1EB16C07-A623-4A32-9381-F99272D2BC32</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -3417,7 +3417,7 @@ The following actions can be used on entries returned from the `lp`, `lpf` &amp;
 			<key>xpos</key>
 			<real>665</real>
 			<key>ypos</key>
-			<real>1290</real>
+			<real>1285</real>
 		</dict>
 		<key>1F8C695C-78C0-4018-96F9-725B55E020CD</key>
 		<dict>
@@ -3455,7 +3455,7 @@ The following actions can be used on entries returned from the `lp`, `lpf` &amp;
 			<key>xpos</key>
 			<real>665</real>
 			<key>ypos</key>
-			<real>1185</real>
+			<real>1180</real>
 		</dict>
 		<key>2BC67259-5B0E-4067-8111-E104CAEEE727</key>
 		<dict>
@@ -3516,7 +3516,7 @@ The following actions can be used on entries returned from the `lp`, `lpf` &amp;
 			<key>xpos</key>
 			<real>860</real>
 			<key>ypos</key>
-			<real>1195</real>
+			<real>1180</real>
 		</dict>
 		<key>3FAB77D2-D856-470E-9A38-1B6AFADC55E7</key>
 		<dict>
@@ -3541,7 +3541,7 @@ The following actions can be used on entries returned from the `lp`, `lpf` &amp;
 			<key>xpos</key>
 			<real>995</real>
 			<key>ypos</key>
-			<real>1225</real>
+			<real>1210</real>
 		</dict>
 		<key>4DAC7A29-A580-450C-95CD-269C4C683147</key>
 		<dict>
@@ -3726,7 +3726,7 @@ The following actions can be used on entries returned from the `lp`, `lpf` &amp;
 			<key>xpos</key>
 			<real>1045</real>
 			<key>ypos</key>
-			<real>1195</real>
+			<real>1180</real>
 		</dict>
 		<key>8DFF1A5A-133F-46E8-BF67-F2E8708D6B0D</key>
 		<dict>
@@ -3760,9 +3760,9 @@ The following actions can be used on entries returned from the `lp`, `lpf` &amp;
 			<key>colorindex</key>
 			<integer>8</integer>
 			<key>xpos</key>
-			<real>470</real>
+			<real>475</real>
 			<key>ypos</key>
-			<real>1320</real>
+			<real>1315</real>
 		</dict>
 		<key>9A34D7BF-153A-4190-ADBA-073F7CEB76A2</key>
 		<dict>
@@ -3834,7 +3834,7 @@ The following actions can be used on entries returned from the `lp`, `lpf` &amp;
 			<key>xpos</key>
 			<real>535</real>
 			<key>ypos</key>
-			<real>1290</real>
+			<real>1285</real>
 		</dict>
 		<key>B0721EDF-A7CF-4C3D-B473-8555A4E00276</key>
 		<dict>
@@ -3940,7 +3940,7 @@ The following actions can be used on entries returned from the `lp`, `lpf` &amp;
 			<key>xpos</key>
 			<real>1045</real>
 			<key>ypos</key>
-			<real>1300</real>
+			<real>1285</real>
 		</dict>
 		<key>DC328262-C685-4CA0-AC71-7BE8251851CD</key>
 		<dict>
