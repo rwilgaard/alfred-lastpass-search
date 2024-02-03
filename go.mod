@@ -1,6 +1,6 @@
 module github.com/rwilgaard/alfred-lastpass-search
 
-go 1.19
+go 1.21
 
 require (
 	github.com/deanishe/awgo v0.29.1
