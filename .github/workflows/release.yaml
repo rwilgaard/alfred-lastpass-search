@@ -55,7 +55,7 @@ jobs:
           fetch-depth: 0
 
       - name: Dowload artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: universal-binary
           path: download
