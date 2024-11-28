@@ -93,21 +93,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>1F8C695C-78C0-4018-96F9-725B55E020CD</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>E296F757-AF4A-48F3-B572-05B548A3E009</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>sourceoutputuid</key>
-				<string>850846F1-4FEF-4C29-B4C1-C9B00E748986</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>20C5774E-9136-4300-AA60-C6F4DDDB65B3</key>
 		<array>
 			<dict>
@@ -371,6 +356,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>5F27022E-3FC8-471E-B77F-8C7A6FAFA0FF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E296F757-AF4A-48F3-B572-05B548A3E009</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>61B8772B-7210-46F3-AC6D-66AFF3187B4A</key>
 		<array>
 			<dict>
@@ -495,19 +493,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>F626AE57-1EBB-439B-8E97-C23BE9BEC97D</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>79E64DC4-9144-4504-B57B-73B95CEF5BD8</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>1F8C695C-78C0-4018-96F9-725B55E020CD</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1029,7 +1014,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>79E64DC4-9144-4504-B57B-73B95CEF5BD8</string>
+				<string>5F27022E-3FC8-471E-B77F-8C7A6FAFA0FF</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1215,11 +1200,11 @@
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>0</integer>
+				<integer>37</integer>
 				<key>hotmod</key>
-				<integer>0</integer>
+				<integer>1179648</integer>
 				<key>hotstring</key>
-				<string></string>
+				<string>L</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -1669,39 +1654,35 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>ObjC.import('stdlib')
-
-function run(argument){
-    var app = Application.currentApplication()
-    app.includeStandardAdditions = true
-
-    var alertText = "Notes"
-    var response = app.displayAlert(alertText, {
-        as: "warning",
-        buttons: ["Go back", "Close"],
-        defaultButton: "Close",
-        cancelButton: "Go back",
-        message: argument
-    })
-}</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
+				<key>behaviour</key>
+				<integer>0</integer>
+				<key>fontmode</key>
+				<integer>0</integer>
+				<key>fontsizing</key>
+				<integer>0</integer>
+				<key>footertext</key>
+				<string>Notes</string>
+				<key>inputfile</key>
 				<string></string>
-				<key>type</key>
-				<integer>7</integer>
+				<key>inputtype</key>
+				<integer>0</integer>
+				<key>loadingtext</key>
+				<string></string>
+				<key>outputmode</key>
+				<integer>0</integer>
+				<key>scriptinput</key>
+				<integer>0</integer>
+				<key>spellchecking</key>
+				<integer>0</integer>
+				<key>stackview</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.userinterface.text</string>
 			<key>uid</key>
-			<string>79E64DC4-9144-4504-B57B-73B95CEF5BD8</string>
+			<string>5F27022E-3FC8-471E-B77F-8C7A6FAFA0FF</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1744,38 +1725,6 @@ function run(argument){
 			<string>FC0D6215-959A-42CC-B797-1F9EAB86E20A</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string></string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>6</integer>
-						<key>matchstring</key>
-						<string></string>
-						<key>outputlabel</key>
-						<string>Go back</string>
-						<key>uid</key>
-						<string>850846F1-4FEF-4C29-B4C1-C9B00E748986</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>else</string>
-				<key>hideelse</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>1F8C695C-78C0-4018-96F9-725B55E020CD</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -3419,15 +3368,6 @@ The following actions can be used on entries returned from the `lp`, `lpf` &amp;
 			<key>ypos</key>
 			<real>1285</real>
 		</dict>
-		<key>1F8C695C-78C0-4018-96F9-725B55E020CD</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>12</integer>
-			<key>xpos</key>
-			<real>1695</real>
-			<key>ypos</key>
-			<real>310</real>
-		</dict>
 		<key>20C5774E-9136-4300-AA60-C6F4DDDB65B3</key>
 		<dict>
 			<key>colorindex</key>
@@ -3595,6 +3535,15 @@ The following actions can be used on entries returned from the `lp`, `lpf` &amp;
 			<key>ypos</key>
 			<real>500</real>
 		</dict>
+		<key>5F27022E-3FC8-471E-B77F-8C7A6FAFA0FF</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
+			<key>xpos</key>
+			<real>1560</real>
+			<key>ypos</key>
+			<real>280</real>
+		</dict>
 		<key>61B8772B-7210-46F3-AC6D-66AFF3187B4A</key>
 		<dict>
 			<key>colorindex</key>
@@ -3673,15 +3622,6 @@ The following actions can be used on entries returned from the `lp`, `lpf` &amp;
 			<real>1670</real>
 			<key>ypos</key>
 			<real>1100</real>
-		</dict>
-		<key>79E64DC4-9144-4504-B57B-73B95CEF5BD8</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>12</integer>
-			<key>xpos</key>
-			<real>1560</real>
-			<key>ypos</key>
-			<real>280</real>
 		</dict>
 		<key>830F3986-D17B-4CA4-8682-F0A5E286E7BD</key>
 		<dict>
@@ -3985,7 +3925,7 @@ The following actions can be used on entries returned from the `lp`, `lpf` &amp;
 			<key>colorindex</key>
 			<integer>12</integer>
 			<key>xpos</key>
-			<real>1750</real>
+			<real>1705</real>
 			<key>ypos</key>
 			<real>280</real>
 		</dict>
