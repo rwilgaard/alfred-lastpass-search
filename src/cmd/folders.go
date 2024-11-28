@@ -1,7 +1,6 @@
 package cmd
 
 import (
-	aw "github.com/deanishe/awgo"
 	"github.com/rwilgaard/alfred-lastpass-search/src/pkg/lastpass"
 	"github.com/rwilgaard/alfred-lastpass-search/src/pkg/util"
 	"github.com/rwilgaard/go-alfredutils/alfredutils"
@@ -23,10 +22,6 @@ var (
             folders, err := ls.GetFolders()
             if err != nil {
                 wf.FatalError(err)
-            }
-
-            if cfg.IntelligentOrdering {
-                wf.Configure(aw.SuppressUIDs(false))
             }
 
             wf.NewItem("Select folder").

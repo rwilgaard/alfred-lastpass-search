@@ -59,6 +59,10 @@ func run() {
         alfredutils.HandleFeedback(wf)
     }
 
+    if cfg.IntelligentOrdering {
+        wf.Configure(aw.SuppressUIDs(false))
+    }
+
     if err := rootCmd.Execute(); err != nil {
         wf.FatalError(err)
     }
