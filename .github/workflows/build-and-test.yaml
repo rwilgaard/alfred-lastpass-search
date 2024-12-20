@@ -12,18 +12,18 @@ on:
 jobs:
   lint:
     name: lint
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Set up Go
         uses: actions/setup-go@v2
         with:
-          go-version: ~1.21
+          go-version: ~1.23
 
       - name: Check out code
         uses: actions/checkout@v3
 
       - name: Install golangci-lint
-        run: curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.55.2
+        run: curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.62.2
 
       - name: Run vet.
         run: make vet
@@ -37,12 +37,12 @@ jobs:
     needs: [lint]
     strategy:
       matrix:
-        os: [macos-12, ubuntu-20.04]
+        os: [macos-14, macos-15, ubuntu-24.04]
     steps:
       - name: Set up Go
         uses: actions/setup-go@v2
         with:
-          go-version: ~1.21
+          go-version: ~1.23
 
       - name: Check out code
         uses: actions/checkout@v3
@@ -51,6 +51,6 @@ jobs:
         run: make build
 
       - name: Create universal binary
-        if: ${{ matrix.os != 'ubuntu-20.04' }}
+        if: ${{ matrix.os != 'ubuntu-24.04' }}
         run: |
           make universal-binary

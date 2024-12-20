@@ -18,5 +18,5 @@ require (
 	github.com/rwilgaard/go-alfredutils v1.1.2
 	go.deanishe.net/env v0.5.1 // indirect
 	go.deanishe.net/fuzzy v1.0.0 // indirect
-	golang.org/x/text v0.14.0 // indirect
+	golang.org/x/text v0.21.0 // indirect
 )
