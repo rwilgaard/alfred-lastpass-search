@@ -75,7 +75,7 @@ func (ls *LastpassService) GetEntries(query string, folders []string, fuzzy bool
 		cmd := exec.Command(ls.BinPath, "ls", "--format", "%aN [id: %ai] [url: %al] [username: %au] %ap", "--sync=no", folder)
 		out, err := cmd.Output()
 		if err != nil {
-			return nil, fmt.Errorf("Error running lpass ls: %s", err)
+			return nil, fmt.Errorf("error running lpass ls: %s", err)
 		}
 
 		output += string(out)
