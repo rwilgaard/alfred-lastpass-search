@@ -16,6 +16,9 @@ lint: ## Lint Golang files
 vet: ## Run go vet
 	@go vet ./src
 
+test: ## Run go test
+	@go test -cover -v ./src/...
+
 build: dep ## Build the binary file
 	@CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -o workflow/$(PROJECT_NAME)-amd64 ./src
 	@CGO_ENABLED=0 GOOS=darwin GOARCH=arm64 go build -o workflow/$(PROJECT_NAME)-arm64 ./src
