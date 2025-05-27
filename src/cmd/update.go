@@ -11,13 +11,10 @@ var updateCmd = &cobra.Command{
 	Use:          "update",
 	Short:        "check for updates",
 	SilenceUsage: true,
-	RunE: func(cmd *cobra.Command, args []string) error {
+	RunE: func(_ *cobra.Command, _ []string) error {
 		wf.Configure(aw.TextErrors(true))
 		log.Println("Checking for updates...")
-		if err := wf.CheckForUpdate(); err != nil {
-			return err
-		}
-		return nil
+		return wf.CheckForUpdate()
 	},
 }
 

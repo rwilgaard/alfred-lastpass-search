@@ -15,7 +15,7 @@ var (
 		Short:        "list entries",
 		SilenceUsage: false,
 		Args:         cobra.RangeArgs(0, 1),
-		Run: func(cmd *cobra.Command, args []string) {
+		Run: func(_ *cobra.Command, args []string) {
 			var query string
 			if len(args) > 0 {
 				query = args[0]

@@ -12,8 +12,8 @@ var foldersCmd = &cobra.Command{
 	Short:        "list folders",
 	SilenceUsage: true,
 	Args:         cobra.ExactArgs(1),
-	Run: func(cmd *cobra.Command, args []string) {
-		ls, err := lastpass.NewLastpassService("lpass")
+	Run: func(_ *cobra.Command, args []string) {
+		ls, err := lastpass.NewService("lpass")
 		if err != nil {
 			wf.FatalError(err)
 		}

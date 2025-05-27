@@ -22,9 +22,8 @@ var (
 func RegexSearch(regex *regexp.Regexp, query string) string {
 	if regex.MatchString(query) {
 		return regex.FindStringSubmatch(query)[1]
-	} else {
-		return ""
 	}
+	return ""
 }
 
 func HasAll(input string, words []string) bool {
@@ -37,7 +36,7 @@ func HasAll(input string, words []string) bool {
 	return true
 }
 
-func GeneratePassword(length int, symbols bool, allowedSymbols string) (string, error) {
+func GeneratePassword(length int, symbols bool, allowedSymbols string) (string, error) { //nolint:revive // Allow control flag for symbols
 	input := password.GeneratorInput{
 		Symbols: allowedSymbols,
 	}
@@ -66,7 +65,7 @@ func GetIcon(key string) *aw.Icon {
 
 	if os.IsNotExist(err) {
 		return &aw.Icon{Value: "icons/default.png"}
-	} else {
-		return &aw.Icon{Value: iconPath}
 	}
+
+	return &aw.Icon{Value: iconPath}
 }
