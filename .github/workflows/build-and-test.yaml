@@ -1,8 +1,9 @@
 name: Build and Test
 
 on:
-  push:
-    branches: ['**']
+  pull_request:
+    branches:
+      - main
     paths:
       - '**'
       - '!.gitignore'
@@ -14,22 +15,27 @@ jobs:
     name: lint
     runs-on: ubuntu-24.04
     steps:
-      - name: Set up Go
-        uses: actions/setup-go@v2
-        with:
-          go-version: ~1.23
-
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Install golangci-lint
-        run: curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.62.2
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
 
-      - name: Run vet.
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v8
+        with:
+          version: v2.1
+
+      - name: Run vet
         run: make vet
 
-      - name: Run lint.
+      - name: Run lint
         run: make lint
+
+      - name: Run tests
+        run: make test
 
   build:
     name: Build on ${{ matrix.os }}
@@ -39,13 +45,13 @@ jobs:
       matrix:
         os: [macos-14, macos-15, ubuntu-24.04]
     steps:
-      - name: Set up Go
-        uses: actions/setup-go@v2
-        with:
-          go-version: ~1.23
-
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
 
       - name: Build
         run: make build
