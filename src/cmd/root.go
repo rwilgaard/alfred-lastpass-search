@@ -19,12 +19,13 @@ type workflowConfig struct {
 }
 
 const (
-	repo = "rwilgaard/alfred-lastpass-search"
+	repo       = "rwilgaard/alfred-lastpass-search"
+	maxResults = 25
 )
 
 var (
 	wf      *aw.Workflow
-	ls      *lastpass.LastpassService
+	ls      *lastpass.Service
 	cfg     = &workflowConfig{}
 	rootCmd = &cobra.Command{
 		Use:   "lastpass-alfred",
@@ -46,7 +47,7 @@ func run() {
 	}
 
 	var err error
-	ls, err = lastpass.NewLastpassService("lpass")
+	ls, err = lastpass.NewService("lpass")
 	if err != nil {
 		wf.FatalError(err)
 	}
@@ -70,7 +71,7 @@ func run() {
 
 func init() {
 	wf = aw.New(
-		aw.MaxResults(25),
+		aw.MaxResults(maxResults),
 		update.GitHub(repo),
 		aw.SuppressUIDs(true),
 	)

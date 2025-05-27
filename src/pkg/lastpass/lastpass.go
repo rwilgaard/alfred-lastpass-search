@@ -10,17 +10,17 @@ import (
 	"github.com/rwilgaard/alfred-lastpass-search/src/pkg/util"
 )
 
-// LastpassService handles interactions with the LastPass CLI.
-type LastpassService struct {
+// Service handles interactions with the LastPass CLI.
+type Service struct {
 	BinPath     string
 	ExecCommand func(name string, arg ...string) *exec.Cmd
 }
 
-type LastpassFolder struct {
+type Folder struct {
 	Name string
 }
 
-type LastpassEntry struct {
+type Entry struct {
 	ID       string
 	Name     string
 	Folder   string
@@ -29,13 +29,13 @@ type LastpassEntry struct {
 	Password string
 }
 
-// NewLastpassService creates a new LastpassService.
-func NewLastpassService(binPath string) (*LastpassService, error) {
+// NewService creates a new Service.
+func NewService(binPath string) (*Service, error) {
 	if len(binPath) == 0 {
 		return nil, errors.New("binPath is empty")
 	}
 
-	svc := &LastpassService{
+	svc := &Service{
 		BinPath:     binPath,
 		ExecCommand: exec.Command, // Default to the real exec.Command
 	}
@@ -44,7 +44,7 @@ func NewLastpassService(binPath string) (*LastpassService, error) {
 }
 
 // IsLoggedIn checks if the user is logged into LastPass.
-func (ls *LastpassService) IsLoggedIn() bool {
+func (ls *Service) IsLoggedIn() bool {
 	cmd := ls.ExecCommand(ls.BinPath, "status", "--quiet")
 	err := cmd.Run()
 
@@ -52,7 +52,7 @@ func (ls *LastpassService) IsLoggedIn() bool {
 }
 
 // GetFolders retrieves all LastPass folder names.
-func (ls *LastpassService) GetFolders() ([]LastpassFolder, error) {
+func (ls *Service) GetFolders() ([]Folder, error) {
 	cmdString := ls.BinPath + ` ls --format="%/as%/ag" --sync=no | sort -u`
 	cmd := ls.ExecCommand("bash", "-c", cmdString)
 	out, err := cmd.Output()
@@ -60,14 +60,14 @@ func (ls *LastpassService) GetFolders() ([]LastpassFolder, error) {
 		return nil, fmt.Errorf("error running command to get folders: %w", err)
 	}
 
-	var folders []LastpassFolder
+	var folders []Folder
 	folderOutput := strings.TrimSuffix(string(out), "\n")
 	if folderOutput == "" {
-		return []LastpassFolder{}, nil
+		return []Folder{}, nil
 	}
 	for _, folderName := range strings.Split(folderOutput, "\n") {
 		if folderName != "" { // Ensure we don't add empty folder names
-			lf := LastpassFolder{
+			lf := Folder{
 				Name: folderName,
 			}
 			folders = append(folders, lf)
@@ -78,7 +78,7 @@ func (ls *LastpassService) GetFolders() ([]LastpassFolder, error) {
 }
 
 // GetEntries retrieves LastPass entries, optionally filtered by query and folders.
-func (ls *LastpassService) GetEntries(query string, folders []string, fuzzy bool) ([]LastpassEntry, error) {
+func (ls *Service) GetEntries(query string, folders []string, fuzzy bool) ([]Entry, error) { //nolint:revive // Allow control flag for fuzzy search
 	var outputBuilder strings.Builder
 
 	if len(folders) == 0 {
@@ -106,10 +106,10 @@ func (ls *LastpassService) GetEntries(query string, folders []string, fuzzy bool
 	usernameRegex := regexp.MustCompile(`\[username: (.+?)\]`)
 	passwordRegex := regexp.MustCompile(`.*\] (.*)$`)
 
-	var entries []LastpassEntry
+	entries := make([]Entry, 0)
 	trimmedOutput := strings.TrimSuffix(fullOutput, "\n")
 	if trimmedOutput == "" {
-		return []LastpassEntry{}, nil
+		return entries, nil
 	}
 
 	for _, l := range strings.Split(trimmedOutput, "\n") {
@@ -141,7 +141,7 @@ func (ls *LastpassService) GetEntries(query string, folders []string, fuzzy bool
 			}
 		}
 
-		entries = append(entries, LastpassEntry{
+		entries = append(entries, Entry{
 			ID:       id,
 			Name:     name,
 			Folder:   folder,
@@ -155,7 +155,7 @@ func (ls *LastpassService) GetEntries(query string, folders []string, fuzzy bool
 }
 
 // GetDetails retrieves detailed information for a specific LastPass item.
-func (ls *LastpassService) GetDetails(itemID string) ([]string, map[string]string, error) {
+func (ls *Service) GetDetails(itemID string) ([]string, map[string]string, error) {
 	if len(itemID) == 0 {
 		return nil, nil, errors.New("itemID is empty")
 	}
@@ -171,7 +171,7 @@ func (ls *LastpassService) GetDetails(itemID string) ([]string, map[string]strin
 	keys := []string{}
 	details := make(map[string]string)
 
-	outputLines := strings.Split(strings.TrimSuffix(string(out), "\n"), "\n")
+	outputLines := strings.Split(strings.TrimSuffix(string(out), "\n"), "\n") //nolint:revive // Allow newline without const
 
 	for i, l := range outputLines {
 		if l == "" {
@@ -194,7 +194,7 @@ func (ls *LastpassService) GetDetails(itemID string) ([]string, map[string]strin
 }
 
 // CheckValidity checks if an action can be performed on an entry.
-func (ls *LastpassService) CheckValidity(entry LastpassEntry, action string) bool {
+func (ls *Service) CheckValidity(entry Entry, action string) bool {
 	if action == "Copy Password" && entry.Password == "" {
 		return false
 	} else if action == "Copy Username" && entry.Username == "" {

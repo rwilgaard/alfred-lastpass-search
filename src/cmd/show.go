@@ -16,7 +16,7 @@ var showCmd = &cobra.Command{
 	Short:        "show entry details",
 	SilenceUsage: true,
 	Args:         cobra.ExactArgs(1),
-	RunE: func(cmd *cobra.Command, args []string) error {
+	RunE: func(_ *cobra.Command, args []string) error {
 		itemID := args[0]
 
 		keys, details, err := ls.GetDetails(itemID)

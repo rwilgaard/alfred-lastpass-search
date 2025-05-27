@@ -9,13 +9,15 @@ import (
 	"github.com/spf13/cobra"
 )
 
+const passwordLengthDefault = 32
+
 var (
 	lengthFlag  int
 	generateCmd = &cobra.Command{
 		Use:          "generate",
 		Short:        "generate new password",
 		SilenceUsage: true,
-		Run: func(cmd *cobra.Command, args []string) {
+		Run: func(_ *cobra.Command, _ []string) {
 			pws, err := util.GeneratePassword(lengthFlag, true, cfg.AllowedSymbols)
 			if err != nil {
 				wf.FatalError(err)
@@ -48,6 +50,6 @@ var (
 )
 
 func init() {
-	generateCmd.Flags().IntVarP(&lengthFlag, "length", "l", 32, "length of password to generate")
+	generateCmd.Flags().IntVarP(&lengthFlag, "length", "l", passwordLengthDefault, "length of password to generate")
 	rootCmd.AddCommand(generateCmd)
 }

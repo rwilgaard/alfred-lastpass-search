@@ -23,10 +23,10 @@ func TestHelperProcess(t *testing.T) {
 	mockStderr := os.Getenv("MOCK_STDERR")
 
 	if mockStdout != "" {
-		fmt.Fprint(os.Stdout, mockStdout)
+		_, _ = fmt.Fprint(os.Stdout, mockStdout)
 	}
 	if mockStderr != "" {
-		fmt.Fprint(os.Stderr, mockStderr)
+		_, _ = fmt.Fprint(os.Stderr, mockStderr)
 	}
 
 	if mockExitCode == "0" {
@@ -93,7 +93,7 @@ func TestLastpassServiceIsLoggedIn(t *testing.T) {
 
 	for _, tt := range testCases {
 		t.Run(tt.name, func(t *testing.T) {
-			ls := &LastpassService{
+			ls := &Service{
 				BinPath:     tt.binPath,
 				ExecCommand: mockExecCommand(t, tt.mockStdout, tt.mockStderr, tt.mockExitCode),
 			}
@@ -110,7 +110,7 @@ func TestLastpassServiceGetFolders(t *testing.T) {
 		mockStdout      string
 		mockStderr      string
 		mockExitCode    int
-		wantFolders     []LastpassFolder
+		wantFolders     []Folder
 		wantErr         bool
 		expectedErrText string
 	}{
@@ -119,7 +119,7 @@ func TestLastpassServiceGetFolders(t *testing.T) {
 			mockStdout:   "",
 			mockStderr:   "",
 			mockExitCode: 0,
-			wantFolders:  []LastpassFolder{},
+			wantFolders:  []Folder{},
 			wantErr:      false,
 		},
 		{
@@ -127,7 +127,7 @@ func TestLastpassServiceGetFolders(t *testing.T) {
 			mockStdout:   "Work/\n",
 			mockStderr:   "",
 			mockExitCode: 0,
-			wantFolders: []LastpassFolder{
+			wantFolders: []Folder{
 				{Name: "Work/"},
 			},
 			wantErr: false,
@@ -137,7 +137,7 @@ func TestLastpassServiceGetFolders(t *testing.T) {
 			mockStdout:   "Personal/\nShared-Family/\nWork/\n",
 			mockStderr:   "",
 			mockExitCode: 0,
-			wantFolders: []LastpassFolder{
+			wantFolders: []Folder{
 				{Name: "Personal/"},
 				{Name: "Shared-Family/"},
 				{Name: "Work/"},
@@ -149,7 +149,7 @@ func TestLastpassServiceGetFolders(t *testing.T) {
 			mockStdout:   "Finance/Banking/\nOld Projects/\nWork Items (New)/\n",
 			mockStderr:   "",
 			mockExitCode: 0,
-			wantFolders: []LastpassFolder{
+			wantFolders: []Folder{
 				{Name: "Finance/Banking/"},
 				{Name: "Old Projects/"},
 				{Name: "Work Items (New)/"},
@@ -161,7 +161,7 @@ func TestLastpassServiceGetFolders(t *testing.T) {
 			mockStdout:   "Folder1/\nFolder2/\n",
 			mockStderr:   "",
 			mockExitCode: 0,
-			wantFolders: []LastpassFolder{
+			wantFolders: []Folder{
 				{Name: "Folder1/"},
 				{Name: "Folder2/"},
 			},
@@ -189,7 +189,7 @@ func TestLastpassServiceGetFolders(t *testing.T) {
 
 	for _, tt := range testCases {
 		t.Run(tt.name, func(t *testing.T) {
-			ls := &LastpassService{
+			ls := &Service{
 				BinPath:     "lpass",
 				ExecCommand: mockExecCommand(t, tt.mockStdout, tt.mockStderr, tt.mockExitCode),
 			}
@@ -233,7 +233,7 @@ func TestLastpassServiceGetEntries(t *testing.T) {
 		mockStdout      string
 		mockStderr      string
 		mockExitCode    int
-		want            []LastpassEntry
+		want            []Entry
 		wantErr         bool
 		expectedErrText string
 	}{
@@ -250,7 +250,7 @@ func TestLastpassServiceGetEntries(t *testing.T) {
 			mockStdout:   "",
 			mockStderr:   "",
 			mockExitCode: 0,
-			want:         []LastpassEntry{},
+			want:         []Entry{},
 			wantErr:      false,
 		},
 		{
@@ -266,7 +266,7 @@ func TestLastpassServiceGetEntries(t *testing.T) {
 			mockStdout:   "Work/My Entry [id: 123] [url: http://example.com] [username: user1] pass1\n",
 			mockStderr:   "",
 			mockExitCode: 0,
-			want: []LastpassEntry{
+			want: []Entry{
 				{ID: "123", Name: "My Entry", Folder: "Work", URL: "http://example.com", Username: "user1", Password: "pass1"},
 			},
 			wantErr: false,
@@ -285,7 +285,7 @@ func TestLastpassServiceGetEntries(t *testing.T) {
 				"Prod/ServiceB [id: 101] [url: http://service-b.com] [username: prod_b] pass_b\n",
 			mockStderr:   "",
 			mockExitCode: 0,
-			want: []LastpassEntry{
+			want: []Entry{
 				{ID: "100", Name: "ServiceA", Folder: "Dev", URL: "http://service-a.com", Username: "dev_a", Password: "pass_a"},
 			},
 			wantErr: false,
@@ -303,7 +303,7 @@ func TestLastpassServiceGetEntries(t *testing.T) {
 			mockStdout:   "Social/Twitter [id: 789] [url: http://twitter.com] [username: mytwitter] twpass\n",
 			mockStderr:   "",
 			mockExitCode: 0,
-			want: []LastpassEntry{
+			want: []Entry{
 				{ID: "789", Name: "Twitter", Folder: "Social", URL: "http://twitter.com", Username: "mytwitter", Password: "twpass"},
 			},
 			wantErr: false,
@@ -311,7 +311,7 @@ func TestLastpassServiceGetEntries(t *testing.T) {
 	}
 	for _, tt := range testCases {
 		t.Run(tt.name, func(t *testing.T) {
-			ls := &LastpassService{
+			ls := &Service{
 				BinPath: tt.fields.BinPath,
 				// The mockExecCommand needs to be smart enough to handle the folder argument
 				// that GetEntries appends to the command.
@@ -439,7 +439,7 @@ Username: anotheruser
 			itemID: "33445",
 			mockStdout: `ItemWithEmptyField [id: 33445]
 URL: http://site.com
-CustomField: 
+CustomField:
 Notes: Some notes.
 `,
 			mockStderr:   "",
@@ -461,7 +461,7 @@ Notes: Some notes.
 	for _, tt := range testCases {
 		t.Run(tt.name, func(t *testing.T) {
 			if tt.itemID == "" && tt.wantErr && tt.expectedErrText == "itemID is empty" {
-				ls := &LastpassService{BinPath: "lpass"}
+				ls := &Service{BinPath: "lpass"}
 				_, _, err := ls.GetDetails(tt.itemID)
 				if err == nil {
 					t.Fatalf("GetDetails() with empty itemID expected an error, got nil")
@@ -472,7 +472,7 @@ Notes: Some notes.
 				return
 			}
 
-			ls := &LastpassService{
+			ls := &Service{
 				BinPath:     "lpass",
 				ExecCommand: mockExecCommand(t, tt.mockStdout, tt.mockStderr, tt.mockExitCode),
 			}
