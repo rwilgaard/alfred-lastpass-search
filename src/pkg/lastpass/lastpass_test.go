@@ -34,6 +34,8 @@ func TestHelperProcess(t *testing.T) {
 	} else {
 		exitCode := 1
 		if parsedCode, err := fmt.Sscan(mockExitCode, &exitCode); err != nil || parsedCode != 1 {
+			t.Errorf("TestHelperProcess: failed to parse MOCK_EXIT_CODE %q: %v", mockExitCode, err)
+			exitCode = 1
 		}
 		os.Exit(exitCode)
 	}
