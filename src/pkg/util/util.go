@@ -11,63 +11,62 @@ import (
 )
 
 var (
-    IconFolder = &aw.Icon{Value: "icons/group.png"}
-    IconBack   = &aw.Icon{Value: "icons/go_back.png"}
-    IconSN     = &aw.Icon{Value: "icons/sn.png"}
-    IconPW     = &aw.Icon{Value: "icons/password-alt.png"}
-    IconDelete = &aw.Icon{Value: "icons/trash.png"}
-    IconEdit   = &aw.Icon{Value: "icons/edit.png"}
+	IconFolder = &aw.Icon{Value: "icons/group.png"}
+	IconBack   = &aw.Icon{Value: "icons/go_back.png"}
+	IconSN     = &aw.Icon{Value: "icons/sn.png"}
+	IconPW     = &aw.Icon{Value: "icons/password-alt.png"}
+	IconDelete = &aw.Icon{Value: "icons/trash.png"}
+	IconEdit   = &aw.Icon{Value: "icons/edit.png"}
 )
 
-
 func RegexSearch(regex *regexp.Regexp, query string) string {
-    if regex.MatchString(query) {
-        return regex.FindStringSubmatch(query)[1]
-    } else {
-        return ""
-    }
+	if regex.MatchString(query) {
+		return regex.FindStringSubmatch(query)[1]
+	} else {
+		return ""
+	}
 }
 
 func HasAll(input string, words []string) bool {
-    for _, w := range words {
-        if strings.Contains(input, w) {
-            continue
-        }
-        return false
-    }
-    return true
+	for _, w := range words {
+		if strings.Contains(input, w) {
+			continue
+		}
+		return false
+	}
+	return true
 }
 
 func GeneratePassword(length int, symbols bool, allowedSymbols string) (string, error) {
-    input := password.GeneratorInput{
-        Symbols: allowedSymbols,
-    }
+	input := password.GeneratorInput{
+		Symbols: allowedSymbols,
+	}
 
-    sc := 0
-    if symbols {
-        sc = length / 4
-    }
+	sc := 0
+	if symbols {
+		sc = length / 4
+	}
 
-    gen, err := password.NewGenerator(&input)
-    if err != nil {
-        return "", err
-    }
+	gen, err := password.NewGenerator(&input)
+	if err != nil {
+		return "", err
+	}
 
-    pw, err := gen.Generate(length, length/4, sc, false, true)
-    if err != nil {
-        return "", err
-    }
+	pw, err := gen.Generate(length, length/4, sc, false, true)
+	if err != nil {
+		return "", err
+	}
 
-    return pw, nil
+	return pw, nil
 }
 
 func GetIcon(key string) *aw.Icon {
-    iconPath := fmt.Sprintf("icons/%s.png", strings.ToLower(key))
-    _, err := os.Stat(iconPath)
+	iconPath := fmt.Sprintf("icons/%s.png", strings.ToLower(key))
+	_, err := os.Stat(iconPath)
 
-    if os.IsNotExist(err) {
-        return &aw.Icon{Value: "icons/default.png"}
-    } else {
-        return &aw.Icon{Value: iconPath}
-    }
+	if os.IsNotExist(err) {
+		return &aw.Icon{Value: "icons/default.png"}
+	} else {
+		return &aw.Icon{Value: iconPath}
+	}
 }
