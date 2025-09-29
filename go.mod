@@ -17,7 +17,7 @@ require (
 
 require (
 	github.com/magefile/mage v1.15.0 // indirect
-	github.com/rwilgaard/go-alfredutils v1.1.2
+	github.com/rwilgaard/go-alfredutils v1.2.0
 	go.deanishe.net/env v0.5.1 // indirect
 	go.deanishe.net/fuzzy v1.0.0 // indirect
 	golang.org/x/text v0.25.0 // indirect
