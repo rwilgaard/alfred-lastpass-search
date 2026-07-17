@@ -1,5 +1,4 @@
 name: Build and Test
-
 on:
   pull_request:
     branches:
@@ -11,52 +10,5 @@ on:
       - '!*.md'
 
 jobs:
-  lint:
-    name: lint
-    runs-on: ubuntu-24.04
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v4
-
-      - name: Set up Go
-        uses: actions/setup-go@v5
-        with:
-          go-version-file: go.mod
-
-      - name: golangci-lint
-        uses: golangci/golangci-lint-action@v8
-        with:
-          version: v2.1
-
-      - name: Run vet
-        run: make vet
-
-      - name: Run lint
-        run: make lint
-
-      - name: Run tests
-        run: make test
-
-  build:
-    name: Build on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-    needs: [lint]
-    strategy:
-      matrix:
-        os: [macos-14, macos-15, ubuntu-24.04]
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v4
-
-      - name: Set up Go
-        uses: actions/setup-go@v5
-        with:
-          go-version-file: go.mod
-
-      - name: Build
-        run: make build
-
-      - name: Create universal binary
-        if: ${{ matrix.os != 'ubuntu-24.04' }}
-        run: |
-          make universal-binary
+  ci:
+    uses: rwilgaard/.github/.github/workflows/go-alfred-build.yaml@v1
