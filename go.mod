@@ -1,12 +1,12 @@
 module github.com/rwilgaard/alfred-lastpass-search
 
-go 1.23.0
+go 1.25
 
 toolchain go1.26.5
 
 require (
 	github.com/deanishe/awgo v0.29.1
-	github.com/sethvargo/go-password v0.3.1
+	github.com/sethvargo/go-password v0.4.0
 	github.com/spf13/cobra v1.10.2
 )
 
