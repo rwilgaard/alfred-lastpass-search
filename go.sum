@@ -25,6 +25,8 @@ github.com/rwilgaard/go-alfredutils v1.1.2 h1:1Oz/myJ5rXSBrYB9shEL2tw2x13YVDcgUP
 github.com/rwilgaard/go-alfredutils v1.1.2/go.mod h1:zwxLYwoQcxvBH8tb1EwH7XNSl2bwZESkacANyjEBs+E=
 github.com/rwilgaard/go-alfredutils v1.2.1 h1:2QGtUyvGzWXCnIe4Q0soesvmF43SZk3uHWsJQqENdcI=
 github.com/rwilgaard/go-alfredutils v1.2.1/go.mod h1:zwxLYwoQcxvBH8tb1EwH7XNSl2bwZESkacANyjEBs+E=
+github.com/rwilgaard/go-alfredutils v1.3.0 h1:dDzY0QI3euKYAN4WnQHsRMtd6iFKFLFrk1eDX4WCYLk=
+github.com/rwilgaard/go-alfredutils v1.3.0/go.mod h1:zwxLYwoQcxvBH8tb1EwH7XNSl2bwZESkacANyjEBs+E=
 github.com/sethvargo/go-password v0.3.1 h1:WqrLTjo7X6AcVYfC6R7GtSyuUQR9hGyAj/f1PYQZCJU=
 github.com/sethvargo/go-password v0.3.1/go.mod h1:rXofC1zT54N7R8K/h1WDUdkf9BOx5OptoxrMBcrXzvs=
 github.com/sethvargo/go-password v0.4.0 h1:eSidVKQw5C7CmTDAtH3RipBTSjdU1ZRxQaynD2GWLVU=
