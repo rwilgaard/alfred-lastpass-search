@@ -2,7 +2,7 @@ module github.com/rwilgaard/alfred-lastpass-search
 
 go 1.25
 
-toolchain go1.26.6
+toolchain go1.27.4
 
 require (
 	github.com/deanishe/awgo v0.29.1
